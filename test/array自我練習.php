@@ -64,18 +64,17 @@ for($i=1;$i<=9;$i++)
 echo "<pre>";print_r($x);echo "<pre>";
 
 echo "<hr>";
-echo "<table>";
-
+echo "<table width='500' border='1'>";
+echo "<tr>";
 for($i=0;$i<count($x);$i++){     
     //count 為計算($x)內有多少東西
-    echo "<tr>";
     echo "<td>" . $x[$i] . " " . "</td>";
     if($i%9==8){
     echo "<br>";
     }
-    echo "</tr>";
+    
 }
-
+echo "</tr>";
 echo "</table>";
 
 echo "<hr>";
