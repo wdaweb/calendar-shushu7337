@@ -16,7 +16,7 @@ echo"<tr>";
 for($i=0;$i<6;$i++){
     echo"<td align='center'>$class[$i]</td>";
 }
-echo"<tr>";
+echo "<tr>";
 for($i=0;$i<5;$i++){
     echo"</tr>";
     $item=$num[$i][0];
@@ -26,9 +26,12 @@ for($i=0;$i<5;$i++){
         echo"<td>$item</td>";
     }
 }
+echo "<pre>";print_r($num);echo "</pre>";
+echo "</tr>";
 echo "</table>";
 
 echo "陣列寫法";
+echo "<hr>";
 $score=[
     "Judy"=>[
         "國文"=>95,"英文"=>64,"數學"=>70,"地理"=>90,"歷史"=>84
@@ -46,11 +49,27 @@ $score=[
         "國文"=>71,"英文"=>62,"數學"=>80,"地理"=>62,"歷史"=>64
     ]
     ];
-echo "<pre>";print_r($score);echo "</pre>"
+    foreach ($score as $p => $k){
+        echo $p.$k['國文'].","." "
+               .$k['英文'].","." "
+               .$k['數學'].","." "
+               .$k['地理'].","." "
+               .$k['歷史']."<br>";
+    }
+    echo "<hr>";
+    foreach($score as $k){
+        foreach ($k as $t => $pp){
+            if($pp >= 0){
+                echo  $t . ":" . $pp . "。";
+            }
+        }
+    }
 
 ?>
-
+<h4>九九乘法表用陣列表現</h4>
+<hr>
 <?php
+
 
 // 九九乘法表用陣列表現
 $x=[];
@@ -70,7 +89,7 @@ for($i=0;$i<count($x);$i++){
     //count 為計算($x)內有多少東西
     echo "<td>" . $x[$i] . " " . "</td>";
     if($i%9==8){
-    echo "<tr>" . "<br>" . "</tr>";
+    echo "<tr>" . "<br>" . "</tr>" ;
     }
 }
 echo "</table>";
