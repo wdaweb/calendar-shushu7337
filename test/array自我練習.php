@@ -57,24 +57,22 @@ $x=[];
 for($i=1;$i<=9;$i++)
 {
     for ($j=1;$j<=9;$j++){
-        echo  $x[]= $i . "x" . $j . "=".($i*$j) ;
-     
+        echo  $x[]= $i . "x" . $j . "=".($i*$j) . "<br>";
     }
 }
 echo "<pre>";print_r($x);echo "<pre>";
+?>
 
+<?php
 echo "<hr>";
-echo "<table width='500' border='1'>";
-echo "<tr>";
+echo "<table width='400' border='1'>";
 for($i=0;$i<count($x);$i++){     
     //count 為計算($x)內有多少東西
     echo "<td>" . $x[$i] . " " . "</td>";
     if($i%9==8){
-    echo "<br>";
+    echo "<tr>" . "<br>" . "</tr>";
     }
-    
 }
-echo "</tr>";
 echo "</table>";
 
 echo "<hr>";
