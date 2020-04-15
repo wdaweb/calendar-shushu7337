@@ -1,6 +1,5 @@
 <?php
 
-<<<<<<< HEAD
     $a=false;
     echo !$a;
     echo "<hr>";
@@ -49,12 +48,3 @@
     }
 
     echo"<hr>";
-=======
-echo "hello world";
-$aa;
-$bb;
-
-$ee;
-$cc;
-?>
->>>>>>> 8c9f06a83844046f5c0acf5fadb59fc6d4296dbb
