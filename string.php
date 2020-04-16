@@ -30,7 +30,7 @@ echo trim($a,"Hel");
 
 <h5>3.重複指定字元 str_repeat()</h5>
 <?php
-    echo str_repeat("俺有30公分",5);
+    echo str_repeat("30公分",5);
 ?>
 
 <hr>
