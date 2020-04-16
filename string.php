@@ -49,7 +49,29 @@ echo trim($a,"Hel");
 $str = "哈囉 今天天氣好嗎? 我很好"; 
 $str_split=explode("今",$str);
 echo "<pre>";print_r($str_split);echo "</pre>";
+?>
+<div>this,is,a,book</div>
+<?php
+$str="this,is,a,book";
+$strArray=explode(",",$str);
 
+echo "<pre>";print_r($strArray);echo "</pre>";
+echo $strArray[3];
 
+echo "<hr>";
+echo "將上例陣列重新組合成“this is a book”";
+$str=implode(" ",$strArray);
+echo $str;
 
+?>
+<h5>---延伸應用---</h5>
+<div>將” The reason why a great man is great is that he resolves to be a great man”只取前十字成為” The reason…”
+</div>
+<br>
+<?php 
+$str="The reason why a great man is great is that he resolves to be a great man";
+echo $str;
+echo "<br>";
+$strr=mb_substr($str,0,10) ;
+echo  $strr . "..."  ;
 ?>
