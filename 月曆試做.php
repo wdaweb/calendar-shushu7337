@@ -1,43 +1,86 @@
+<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
 <style>
-    h4 {
+    h1 {
         text-align: center;
+        font-family: 'Fredericka the Great', cursive;
+        font-size: 40px;
+        color: #fff;
     }
-
+    .callyear{
+        text-align: center;
+        font-family: 'Fredericka the Great', cursive,'Noto Sans TC', sans-serif;
+        font-size: 25px;
+        color: #fff
+    }
+    body{
+        background: #000;
+    }
     table {
         margin: 15px;
+        color: #fff
 
     }
-
+    .introy{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff
+    }
+    .introm{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff
+    }
+    div.calendar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    thead{
+        font-family: 'Monoton', cursive;
+    }
+    th:nth-of-type(7),td:nth-of-type(7){
+        color: #B2EBF2;
+    }
+    th:nth-of-type(1),td:nth-of-type(1){
+        color: #F8BBD0;
+    }
     table td {
         border: 1px solid #ccc;
+        border-radius: 10px;
         padding: 10px;
         text-align: center;
+        color: #fff;
+        width: 150px;
+        height: 50px;
     }
 </style>
-<h4>月曆製作</h4>
-<div>
+<h1>Calendar</h1>
+<div class="callyear">
     <form action="?" method="get">
-        年份:<input type="number" name="year">
-        <input type="submit" value="產生年曆">
+        years:<input type="number" name="year">
+        <input type="submit" value="SEND">
     </form>
 </div>
 
 <?php
+// 判斷給值
 if (isset($_GET["year"])) {
     $year = $_GET["year"];
 } else {
     $year = date("Y");
 }
-
-echo "<h4 style='text-align:center'>西元" . $year . "年曆</h4>";
-
 if (isset($_GET["month"])) {
     $month = $_GET["month"];
 } else {
     $month = date("m");
 }
 
-
+// 上下月處理
 if ($month < 1) {
     $month = 12;
     $year -= 1;
@@ -48,19 +91,18 @@ if ($month > 12) {
 }
 ?>
 
-<a href="月曆試做.php?month=<?php echo month("Y-m",strtotime('-1 month',strtotime($YM)));?>">上一月(<?=$month-1;?>)</a>
-<span>本月(<?=$month;?>)</span>
-<a href="月曆試做.php?month=<?=$month+1;?>">下一月(<?=$month+1;?>)</a>
+<div class="introy">
 
-<!-- <a href="月曆試做.php?year=<?= $year - 1; ?>">上一年</a>
-<span>今年(<?= $year; ?>)</span>
+<a href="月曆試做.php?year=<?= $year - 1; ?>">上一年</a>
+<span>&nbsp&nbsp&nbsp<?= $year; ?>&nbsp&nbsp&nbsp</span>
 <a href="月曆試做.php?year=<?= $year + 1; ?>">下一年</a>
-<br>
-
+</div>
+<div class="introm">
 <a href="月曆試做.php?month=<?= $month - 1; ?>">上一月</a>
-<span>本月(<?= $month; ?>)</span>
-<a href="月曆試做.php?month=<?= $month + 1; ?>">下一月</a> -->
-<div>月份:<?= $month; ?></div>
+<span>&nbsp&nbsp<?= $month; ?>&nbsp&nbsp</span>
+<a href="月曆試做.php?month=<?= $month + 1; ?>">下一月</a>
+</div>
+<div class="calendar">
 <table>
     <thead>
         <tr>
@@ -100,5 +142,4 @@ if ($month > 12) {
         ?>
     </tbody>
 </table>
-<?php
-?>
+</div>
