@@ -48,14 +48,9 @@ if ($month > 12) {
 }
 ?>
 
-<?php
-
-echo "<a href='月曆試做.php?year=" . ($year - 1) . "&month=" . $month . "><<</a>" . $year . "年<a href='月曆試做.php?year=" . ($year + 1) . "&month=" . $month . ">>></a>"; 
-
-echo "<a href='月曆試做.php?month=" . ($month - 1) . "& year=" . $year . "><<</a>" . $month . "月<a href='月曆試做.php'?month=" . ($month + 1) . "&year=" . $year . ">>></a>"; //上下月
-
-?>
-
+<a href="月曆試做.php?month=<?php echo month("Y-m",strtotime('-1 month',strtotime($YM)));?>">上一月(<?=$month-1;?>)</a>
+<span>本月(<?=$month;?>)</span>
+<a href="月曆試做.php?month=<?=$month+1;?>">下一月(<?=$month+1;?>)</a>
 
 <!-- <a href="月曆試做.php?year=<?= $year - 1; ?>">上一年</a>
 <span>今年(<?= $year; ?>)</span>
@@ -69,13 +64,13 @@ echo "<a href='月曆試做.php?month=" . ($month - 1) . "& year=" . $year . "><
 <table>
     <thead>
         <tr>
-            <td>日</td>
-            <td>一</td>
-            <td>二</td>
-            <td>三</td>
-            <td>四</td>
-            <td>五</td>
-            <td>六</td>
+            <td>SUN</td>
+            <td>MON</td>
+            <td>TUE</td>
+            <td>WED</td>
+            <td>THU</td>
+            <td>FRI</td>
+            <td>SAT</td>
         </tr>
     </thead>
     <tbody>
