@@ -42,6 +42,7 @@
     }
     thead{
         font-family: 'Monoton', cursive;
+        font-size: 25px;
     }
     th:nth-of-type(7),td:nth-of-type(7){
         color: #B2EBF2;
@@ -50,8 +51,8 @@
         color: #F8BBD0;
     }
     table td {
-        border: 1px solid #ccc;
-        border-radius: 10px;
+        border: 1.5px solid #ccc;
+        border-radius: 15px;
         padding: 10px;
         text-align: center;
         color: #fff;
@@ -69,6 +70,7 @@
 
 <?php
 // 判斷給值
+
 if (isset($_GET["year"])) {
     $year = $_GET["year"];
 } else {
@@ -89,6 +91,9 @@ if ($month > 12) {
     $month = 1;
     $year += 1;
 }
+
+$prev = date('Y-m',mktime(0,0,0,date('m',$timestamp)-1),1,date('Y',$timestamp));
+$next = date('Y-m',mktime(0,0,0,date('m',$timestamp)+1),1,date('Y',$timestamp));
 ?>
 
 <div class="introy">
@@ -98,9 +103,9 @@ if ($month > 12) {
 <a href="月曆試做.php?year=<?= $year + 1; ?>">下一年</a>
 </div>
 <div class="introm">
-<a href="月曆試做.php?month=<?= $month - 1; ?>">上一月</a>
+<a href="月曆試做.php?month=<?= $prev; ?>">上一月</a>
 <span>&nbsp&nbsp<?= $month; ?>&nbsp&nbsp</span>
-<a href="月曆試做.php?month=<?= $month + 1; ?>">下一月</a>
+<a href="月曆試做.php?month=<?= $next; ?>">下一月</a>
 </div>
 <div class="calendar">
 <table>
@@ -117,7 +122,8 @@ if ($month > 12) {
     </thead>
     <tbody>
         <?php
-        $firstDay = date("$year-$month-01");
+        $today=date('Y-m-d',time());
+        // $firstDay = date("$year-$month-01");
         $firstDayWeek = date("w", strtotime($firstDay));
         $WeekDays = date("t", strtotime($firstDay));
         // 空白天數加上總天數除七
