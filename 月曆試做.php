@@ -15,30 +15,29 @@
         color: #fff
     }
     body{
-        background: #000;
+        background: #FFF;
     }
     table {
         margin: 15px;
-        color: #fff
+        color: #fff;
 
     }
     .introy{
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #fff
+        color: #000;
     }
     .introm{
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #fff
+        color: #000;
     }
     div.calendar{
         display: flex;
         justify-content: center;
         align-items: center;
-        
     }
     thead{
         font-family: 'Monoton', cursive;
@@ -71,18 +70,29 @@
 <?php
 // 判斷給值
 
-if (isset($_GET["year"])) {
-    $year = $_GET["year"];
-} else {
-    $year = date("Y");
+if ($_GET['year'] == "") {
+	$_GET['year'] = date("Y");
 }
-if (isset($_GET["month"])) {
-    $month = $_GET["month"];
-} else {
-    $month = date("m");
+if ($_GET['month'] == "") {
+	$_GET['month'] = date("n");
 }
+$month = $_GET['month'];
+$year = $_GET['year'];
+
+// if (isset($_GET["year"])) {
+//     $year = $_GET["year"];
+// } else {
+//     $year = date("Y");
+// }
+// if (isset($_GET["month"])) {
+//     $month = $_GET["month"];
+// } else {
+//     $month = date("n");
+// }   
+
 
 // 上下月處理
+// ver.1
 if ($month < 1) {
     $month = 12;
     $year -= 1;
@@ -92,21 +102,29 @@ if ($month > 12) {
     $year += 1;
 }
 
-$prev = date('Y-m',mktime(0,0,0,date('m',$timestamp)-1),1,date('Y',$timestamp));
-$next = date('Y-m',mktime(0,0,0,date('m',$timestamp)+1),1,date('Y',$timestamp));
 ?>
-
 <div class="introy">
-
-<a href="月曆試做.php?year=<?= $year - 1; ?>">上一年</a>
-<span>&nbsp&nbsp&nbsp<?= $year; ?>&nbsp&nbsp&nbsp</span>
-<a href="月曆試做.php?year=<?= $year + 1; ?>">下一年</a>
+<?php
+echo "<a href=月曆試做.php?year=" . ($year - 1) . "&month=" . $month . "><</a>" . $year . "年<a href=月曆試做.php?year=" .  ($year + 1) . "&month=" . $month . ">></a>"; 
+?>
+</div>
 </div>
 <div class="introm">
-<a href="月曆試做.php?month=<?= $prev; ?>">上一月</a>
-<span>&nbsp&nbsp<?= $month; ?>&nbsp&nbsp</span>
-<a href="月曆試做.php?month=<?= $next; ?>">下一月</a>
+<?php
+echo "<a href=月曆試做.php?month=" . ($month - 1) . "& year=" . $year . "><<</a>" . $month . "月<a href=月曆試做.php?month=" . ($month + 1) . "&year=" . $year . ">>></a>";
+?>
 </div>
+
+<!-- <a href="月曆試做.php?year=<?= $year - 1; ?>">上一年</a>
+<span>&nbsp&nbsp&nbsp<?= $year; ?>&nbsp&nbsp&nbsp</span>
+<a href="月曆試做.php?year=<?= $year + 1; ?>">下一年</a>
+</div> 
+<div class="introm">
+<a href="月曆試做.php?month=<?= $month -1 ?>">上一月</a>
+<span>&nbsp&nbsp<?= $month; ?>&nbsp&nbsp</span>
+<a href="月曆試做.php?month=<?= $month +1 ?>">下一月</a>  -->
+
+</div> 
 <div class="calendar">
 <table>
     <thead>
@@ -122,10 +140,9 @@ $next = date('Y-m',mktime(0,0,0,date('m',$timestamp)+1),1,date('Y',$timestamp));
     </thead>
     <tbody>
         <?php
-        $today=date('Y-m-d',time());
-        // $firstDay = date("$year-$month-01");
-        $firstDayWeek = date("w", strtotime($firstDay));
-        $WeekDays = date("t", strtotime($firstDay));
+        $firstDay = date("$year-$month-01");
+        $firstDayWeek = date("w", strtotime($firstDay)); //第一天
+        $WeekDays = date("t", strtotime($firstDay));  //總天數
         // 空白天數加上總天數除七
         if (date("Y", strtotime($firstDay)))
             for ($i = 0; $i < 6; $i++) {
@@ -136,15 +153,17 @@ $next = date('Y-m',mktime(0,0,0,date('m',$timestamp)+1),1,date('Y',$timestamp));
                         echo "</td>";
                     } else {
                         echo "<td>";
-                        $dd = $i * 7 + $j + 1 - $firstDayWeek;
-                        if ($dd <= $WeekDays) {
-                            echo $dd;
+                        $day = $i * 7 + $j + 1 - $firstDayWeek;
+                        if ($day <= $WeekDays) {
+                            echo $day;
                         }
                         echo "</td>";
                     }
                 }
                 echo "</tr>";
             }
+            // for ($i = date("w", mktime(0, 0, 0, $month, $i, $year)); $i <= 6; $i++)
+            // 	echo "<td>&nbsp;</td>";
         ?>
     </tbody>
 </table>

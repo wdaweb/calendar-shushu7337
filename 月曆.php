@@ -92,3 +92,26 @@ $today=date('Y-m-d',time());
 // mktime函式用法:mktime(hour,minute,second,month,day,year,is_dst);
 $prev = date('Y-m', mktime(0,0,0,date('m',$timestamp)-1),1,date('Y', $timestamp));
 $next = date('Y-m', mktime(0,0,0,date('m',$timestamp)+1),1,date('Y', $timestamp));
+
+$day_count = date('t',$timestamp);
+
+//將星期字串化 0:Sun, 1:Mon...
+$str = date('Y-m',mktime(0,0,0,date('m',$timestamp),1,date('Y',$timestamp)));
+
+//建立日曆
+$weeks = arryay();
+$week = '';
+
+//增加空格
+$week .=str_repeat('<td></td>',$str);
+
+for ( $day = 1; $day_count; $day++, $str++){
+
+    $date = $YM.'-'.$day;
+
+    if($today == $date){
+        $week .='<td class="today">'.$day;
+    }else{
+        $week .='<td>.$day;
+    }
+}
