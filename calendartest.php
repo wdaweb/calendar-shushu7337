@@ -27,6 +27,8 @@
         justify-content: center;
         align-items: center;
         color: #000;
+        font-size:20px;
+        
     }
     .introm{
         display: flex;
@@ -54,7 +56,7 @@
         border-radius: 15px;
         padding: 10px;
         text-align: center;
-        color: #fff;
+        color: #000;
         width: 150px;
         height: 50px;
     }
@@ -70,29 +72,20 @@
 <?php
 // 判斷給值
 
-if ($_GET['year'] == "") {
-	$_GET['year'] = date("Y");
-}
-if ($_GET['month'] == "") {
-	$_GET['month'] = date("n");
-}
-$month = $_GET['month'];
-$year = $_GET['year'];
 
-// if (isset($_GET["year"])) {
-//     $year = $_GET["year"];
-// } else {
-//     $year = date("Y");
-// }
-// if (isset($_GET["month"])) {
-//     $month = $_GET["month"];
-// } else {
-//     $month = date("n");
-// }   
+if (isset($_GET["year"])) {
+    $year = $_GET["year"];
+} else {
+    $year = date("Y");
+}
+if (isset($_GET["month"])) {
+    $month = $_GET["month"];
+} else {
+    $month = date("n");
+}   
 
 
 // 上下月處理
-// ver.1
 if ($month < 1) {
     $month = 12;
     $year -= 1;
@@ -105,24 +98,24 @@ if ($month > 12) {
 ?>
 <div class="introy">
 <?php
-echo "<a href=月曆試做.php?year=" . ($year - 1) . "&month=" . $month . "><</a>" . $year . "年<a href=月曆試做.php?year=" .  ($year + 1) . "&month=" . $month . ">></a>"; 
-?>
-</div>
-</div>
-<div class="introm">
-<?php
-echo "<a href=月曆試做.php?month=" . ($month - 1) . "& year=" . $year . "><<</a>" . $month . "月<a href=月曆試做.php?month=" . ($month + 1) . "&year=" . $year . ">>></a>";
+echo "<a href=calendartest.php?year=" . ($year - 1) . "&month=" . $month . ">上一年</a>" . $year . "年<a href=calendartest.php?year=" .  ($year + 1) . "&month=" . $month . ">下一年</a>";
 ?>
 </div>
 
-<!-- <a href="月曆試做.php?year=<?= $year - 1; ?>">上一年</a>
+<div class="introm">
+<?php
+echo "<a href=calendartest.php?month=" . ($month - 1) . "& year=" . $year . ">上個月</a>" . $month . "月<a href=calendartest.php?month=" . ($month + 1) . "&year=" . $year . ">下個月</a>";
+?>
+</div>
+
+<a href="calendartest.php?year=<?= $year - 1;?>?month=<?= $month?>">上一年</a>
 <span>&nbsp&nbsp&nbsp<?= $year; ?>&nbsp&nbsp&nbsp</span>
-<a href="月曆試做.php?year=<?= $year + 1; ?>">下一年</a>
+<a href="calendartest.php?year=<?= $year + 1;?>?month=<?= $month?>">下一年</a>
 </div> 
 <div class="introm">
-<a href="月曆試做.php?month=<?= $month -1 ?>">上一月</a>
+<a href="calendartest.php?month=<?= $month -1 ?>?year=<?= $year?>">上一月</a>
 <span>&nbsp&nbsp<?= $month; ?>&nbsp&nbsp</span>
-<a href="月曆試做.php?month=<?= $month +1 ?>">下一月</a>  -->
+<a href="calendartest.php?month=<?= $month +1 ?>?year=<?= $year?>">下一月</a> 
 
 </div> 
 <div class="calendar">

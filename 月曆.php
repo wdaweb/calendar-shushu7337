@@ -1,117 +1,129 @@
-<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
-<style>
-    h1 {
-        text-align: center;
-        font-family: 'Fredericka the Great', cursive;
-        font-size: 40px;
-        color: #fff;
-    }
-    .callyear{
-        text-align: center;
-        font-family: 'Fredericka the Great', cursive,'Noto Sans TC', sans-serif;
-        font-size: 25px;
-        color: #fff
-    }
-    body{
-        background: #000;
-    }
-    table {
-        margin: 15px;
-        color: #fff
-
-    }
-    .introy{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff
-    }
-    .introm{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff
-    }
-    div.calendar{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-    }
-    thead{
-        font-family: 'Monoton', cursive;
-        font-size: 25px;
-    }
-    th:nth-of-type(7),td:nth-of-type(7){
-        color: #B2EBF2;
-    }
-    th:nth-of-type(1),td:nth-of-type(1){
-        color: #F8BBD0;
-    }
-    table td {
-        border: 1.5px solid #ccc;
-        border-radius: 15px;
-        padding: 10px;
-        text-align: center;
-        color: #fff;
-        width: 150px;
-        height: 50px;
-    }
-</style>
-<h1>Calendar</h1>
-<div class="callyear">
-    <form action="?" method="get">
-        years:<input type="number" name="year">
-        <input type="submit" value="SEND">
-    </form>
-</div>
-
 <?php
-// 判斷給值
-// 若程式碼有'YM'取值，設變數$Ym為'YM'取值
-if(isset($_GET['YM'])){
-    $YM=$_GET['YM'];
-}else{
-    // 若無上述內容，宣告變數YM為今(年-月)
-    $YM=date('Y-m');
+// Set your timezone
+date_default_timezone_set('Asia/Tokyo');
+
+// Get prev & next month
+if (isset($_GET['ym'])) {
+    $ym = $_GET['ym'];
+} else {
+    // This month
+    $ym = date('Y-m');
 }
 
-// 檢查時間戳
-$timestamp = strtotime($YM,"-01");
-// 如果變數timestamp數值型別及變數有與其不相等時，返回false，並將變數timestamp 設為返回現在時間的時間戳
-if ($timestamp === false){
-    $timestamp = time();
+// Check format
+$timestamp = strtotime($ym . '-01');
+if ($timestamp === false) {
+    $ym = date('Y-m');
+    $timestamp = strtotime($ym . '-01');
 }
 
-// 今天
-$today=date('Y-m-d',time());
+// Today
+$today = date('Y-m-j', time());
 
-// 上個月&下個月
-// mktime函式用法:mktime(hour,minute,second,month,day,year,is_dst);
-$prev = date('Y-m', mktime(0,0,0,date('m',$timestamp)-1),1,date('Y', $timestamp));
-$next = date('Y-m', mktime(0,0,0,date('m',$timestamp)+1),1,date('Y', $timestamp));
+// For H3 title
+$html_title = date('Y / m', $timestamp);
 
-$day_count = date('t',$timestamp);
+// Create prev & next month link     mktime(hour,minute,second,month,day,year)
+$prev = date('Y-m', mktime(0, 0, 0, date('m', $timestamp)-1, 1, date('Y', $timestamp)));
+$next = date('Y-m', mktime(0, 0, 0, date('m', $timestamp)+1, 1, date('Y', $timestamp)));
+// You can also use strtotime!
+// $prev = date('Y-m', strtotime('-1 month', $timestamp));
+// $next = date('Y-m', strtotime('+1 month', $timestamp));
 
-//將星期字串化 0:Sun, 1:Mon...
-$str = date('Y-m',mktime(0,0,0,date('m',$timestamp),1,date('Y',$timestamp)));
+// Number of days in the month
+$day_count = date('t', $timestamp);
+ 
+// 0:Sun 1:Mon 2:Tue ...
+$str = date('w', mktime(0, 0, 0, date('m', $timestamp), 1, date('Y', $timestamp)));
+//$str = date('w', $timestamp);
 
-//建立日曆
-$weeks = arryay();
+
+// Create Calendar!!
+$weeks = array();
 $week = '';
 
-//增加空格
-$week .=str_repeat('<td></td>',$str);
+// Add empty cell
+$week .= str_repeat('<td></td>', $str);
 
-for ( $day = 1; $day_count; $day++, $str++){
-
-    $date = $YM.'-'.$day;
-
-    if($today == $date){
-        $week .='<td class="today">'.$day;
-    }else{
-        $week .='<td>.$day;
+for ( $day = 1; $day <= $day_count; $day++, $str++) {
+     
+    $date = $ym . '-' . $day;
+     
+    if ($today == $date) {
+        $week .= '<td class="today">' . $day;
+    } else {
+        $week .= '<td>' . $day;
     }
+    $week .= '</td>';
+     
+    // End of the week OR End of the month
+    if ($str % 7 == 6 || $day == $day_count) {
+
+        if ($day == $day_count) {
+            // Add empty cell
+            $week .= str_repeat('<td></td>', 6 - ($str % 7));
+        }
+
+        $weeks[] = '<tr>' . $week . '</tr>';
+
+        // Prepare for new week
+        $week = '';
+    }
+
 }
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>PHP Calendar</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <style>
+        .container {
+            font-family: 'Noto Sans', sans-serif;
+            margin-top: 80px;
+        }
+        h3 {
+            margin-bottom: 30px;
+        }
+        th {
+            height: 30px;
+            text-align: center;
+        }
+        td {
+            height: 100px;
+        }
+        .today {
+            background: orange;
+        }
+        th:nth-of-type(1), td:nth-of-type(1) {
+            color: red;
+        }
+        th:nth-of-type(7), td:nth-of-type(7) {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3><a href="?ym=<?php echo $prev; ?>">&lt;</a> <?php echo $html_title; ?> <a href="?ym=<?php echo $next; ?>">&gt;</a></h3>
+        <table class="table table-bordered">
+            <tr>
+                <th>S</th>
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+            </tr>
+            <?php
+                foreach ($weeks as $week) {
+                    echo $week;
+                }
+            ?>
+        </table>
+    </div>
+</body>
+</html>
