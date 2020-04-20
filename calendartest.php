@@ -97,25 +97,14 @@ if ($month > 12) {
 
 ?>
 <div class="introy">
-<?php
-echo "<a href=calendartest.php?year=" . ($year - 1) . "&month=" . $month . ">上一年</a>" . $year . "年<a href=calendartest.php?year=" .  ($year + 1) . "&month=" . $month . ">下一年</a>";
-?>
-</div>
-
-<div class="introm">
-<?php
-echo "<a href=calendartest.php?month=" . ($month - 1) . "& year=" . $year . ">上個月</a>" . $month . "月<a href=calendartest.php?month=" . ($month + 1) . "&year=" . $year . ">下個月</a>";
-?>
-</div>
-
-<a href="calendartest.php?year=<?= $year - 1;?>?month=<?= $month?>">上一年</a>
+<a href="calendartest.php?year=<?= $year - 1;?>&month=<?= $month?>">上一年</a>
 <span>&nbsp&nbsp&nbsp<?= $year; ?>&nbsp&nbsp&nbsp</span>
-<a href="calendartest.php?year=<?= $year + 1;?>?month=<?= $month?>">下一年</a>
+<a href="calendartest.php?year=<?= $year + 1;?>&month=<?= $month?>">下一年</a>
 </div> 
 <div class="introm">
-<a href="calendartest.php?month=<?= $month -1 ?>?year=<?= $year?>">上一月</a>
+<a href="calendartest.php?month=<?= $month -1 ?>&year=<?= $year?>">上一月</a>
 <span>&nbsp&nbsp<?= $month; ?>&nbsp&nbsp</span>
-<a href="calendartest.php?month=<?= $month +1 ?>?year=<?= $year?>">下一月</a> 
+<a href="calendartest.php?month=<?= $month +1 ?>&year=<?= $year?>">下一月</a> 
 
 </div> 
 <div class="calendar">
@@ -136,9 +125,10 @@ echo "<a href=calendartest.php?month=" . ($month - 1) . "& year=" . $year . ">�
         $firstDay = date("$year-$month-01");
         $firstDayWeek = date("w", strtotime($firstDay)); //第一天
         $WeekDays = date("t", strtotime($firstDay));  //總天數
-        // 空白天數加上總天數除七
+        $spaceDay=ceil(($firstDayWeek + $WeekDays) / 7);
+        
         if (date("Y", strtotime($firstDay)))
-            for ($i = 0; $i < 6; $i++) {
+            for ($i = 0; $i < $spaceDay; $i++) {
                 echo "<tr>";
                 for ($j = 0; $j < 7; $j++) {
                     if ($i == 0 && $j < $firstDayWeek) {
