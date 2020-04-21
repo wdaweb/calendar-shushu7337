@@ -12,34 +12,60 @@
         text-align: center;
         font-family: 'Fredericka the Great', cursive,'Noto Sans TC', sans-serif;
         font-size: 25px;
-        color: #fff
+        color: #fff;
     }
     body{
-        background: #FFF;
+        background: #000;
+        text-decoration: none;
     }
     table {
         margin: 15px;
         color: #fff;
 
     }
-    .introy{
+    /* .introy{
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #000;
-        font-size:20px;
+        color: #fff;
+        font-size:36px;
         
+    } */
+    a{
+        text-decoration: none;
     }
+    a:link { color: white;} /*連結提示*/
+    a:visited { color: white;} /*已拜訪過過*/
+    a:hover { color: white;} /*滑過*/
+    a:active { color: white;} /*按下瞬間*/
+
     .introm{
-        display: flex;
+        display: flex;` 
         justify-content: center;
         align-items: center;
-        color: #000;
+        color: #fff;
+        font-size:28px;
+        font-family: 'Fredericka the Great', cursive,'Noto Sans TC', sans-serif;
+        height: 50px;
+    }
+    .prev{ 
+        right:100px;
+        width:80px;
+        height: 30px;
+        border-radius: 30px;    
+        border: 12px #fff;
+        background: transparent;
+    }
+    .next{
+        border: 1px #fff;
+        
+        background: transparent;
     }
     div.calendar{
         display: flex;
         justify-content: center;
         align-items: center;
+
     }
     thead{
         font-family: 'Monoton', cursive;
@@ -53,12 +79,13 @@
     }
     table td {
         border: 1.5px solid #ccc;
-        border-radius: 15px;
-        padding: 10px;
+        border-radius: 50%;
+        padding: 0px;
         text-align: center;
-        color: #000;
-        width: 150px;
-        height: 50px;
+        color: #fff;
+        width: 60px;
+        height: 60px;
+        box-shadow: 2px 2px 10px #fff;
     }
 </style>
 <h1>Calendar</h1>
@@ -81,7 +108,7 @@ if (isset($_GET["year"])) {
 if (isset($_GET["month"])) {
     $month = $_GET["month"];
 } else {
-    $month = date("n");
+    $month = date("M");
 }   
 
 
@@ -96,15 +123,17 @@ if ($month > 12) {
 }
 
 ?>
-<div class="introy">
-<a href="calendartest.php?year=<?= $year - 1;?>&month=<?= $month?>">上一年</a>
+<!-- <div class="introy">
+<a href="calendartest.php?year=<?= $year - 1;?>&month=<?= $month?>">Prev</a>
 <span>&nbsp&nbsp&nbsp<?= $year; ?>&nbsp&nbsp&nbsp</span>
-<a href="calendartest.php?year=<?= $year + 1;?>&month=<?= $month?>">下一年</a>
-</div> 
+<a href="calendartest.php?year=<?= $year + 1;?>&month=<?= $month?>">Next</a>
+</div>  -->
 <div class="introm">
-<a href="calendartest.php?month=<?= $month -1 ?>&year=<?= $year?>">上一月</a>
-<span>&nbsp&nbsp<?= $month; ?>&nbsp&nbsp</span>
-<a href="calendartest.php?month=<?= $month +1 ?>&year=<?= $year?>">下一月</a> 
+<span class="prev"><a href="calendartest.php?month=<?= $month -1 ?>&year=<?= $year?>">Prev</a></span>
+<span>&nbsp&nbsp<?= $year; ?>&nbsp&nbsp</span>
+<span>/</span>
+<span>&nbsp<?= $month; ?>&nbsp</span>
+<span class="next"><a href="calendartest.php?month=<?= $month +1 ?>&year=<?= $year?>">Next</a></span>
 
 </div> 
 <div class="calendar">
