@@ -15,7 +15,7 @@
         color: #fff
     }
     body{
-        background: #FFF;
+        background: #000;
     }
     table {
         margin: 15px;
@@ -26,7 +26,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #000;
+        color: #FFF;
         font-size:20px;
         
     }
@@ -34,7 +34,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #000;
+        color: #FFF;
     }
     div.calendar{
         display: flex;
@@ -56,7 +56,7 @@
         border-radius: 15px;
         padding: 10px;
         text-align: center;
-        color: #000;
+        color: #FFF;
         width: 150px;
         height: 50px;
     }
