@@ -6,21 +6,21 @@
         text-align: center;
         font-family: 'Fredericka the Great', cursive;
         font-size: 40px;
-        color: #fff;
+        color: #000;
     }
     .callyear{
         text-align: center;
         font-family: 'Fredericka the Great', cursive,'Noto Sans TC', sans-serif;
         font-size: 25px;
-        color: #fff;
+        color: #000;
     }
     body{
-        background: #000;
+        background: #fff;
         text-decoration: none;
     }
     table {
         margin: 15px;
-        color: #fff;
+        color: #000;
 
     }
     /* .introy{
@@ -34,16 +34,16 @@
     a{
         text-decoration: none;
     }
-    a:link { color: white;} /*連結提示*/
-    a:visited { color: white;} /*已拜訪過過*/
-    a:hover { color: white;} /*滑過*/
-    a:active { color: white;} /*按下瞬間*/
+    a:link { color: black;} /*連結提示*/
+    a:visited { color: black;} /*已拜訪過過*/
+    a:hover { color: black;} /*滑過*/
+    a:active { color: black;} /*按下瞬間*/
 
     .introm{
         display: flex;` 
         justify-content: center;
         align-items: center;
-        color: #fff;
+        color: #000;
         font-size:28px;
         font-family: 'Fredericka the Great', cursive,'Noto Sans TC', sans-serif;
         height: 50px;
@@ -53,11 +53,11 @@
         width:80px;
         height: 30px;
         border-radius: 30px;    
-        border: 12px #fff;
+        border: 12px #000;
         background: transparent;
     }
     .next{
-        border: 1px #fff;
+        border: 1px #000;
         
         background: transparent;
     }
@@ -82,10 +82,10 @@
         border-radius: 50%;
         padding: 0px;
         text-align: center;
-        color: #fff;
+        color: #000;
         width: 60px;
         height: 60px;
-        box-shadow: 2px 2px 10px #fff;
+        box-shadow: 2px 2px 10px #000;
     }
 </style>
 <h1>Calendar</h1>
@@ -174,8 +174,6 @@ if ($month > 12) {
                 }
                 echo "</tr>";
             }
-            // for ($i = date("w", mktime(0, 0, 0, $month, $i, $year)); $i <= 6; $i++)
-            // 	echo "<td>&nbsp;</td>";
         ?>
     </tbody>
 </table>
