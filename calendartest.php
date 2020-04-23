@@ -40,7 +40,7 @@
     a:active { color: black;} /*按下瞬間*/
 
     .introm{
-        display: flex;` 
+        display: flex;
         justify-content: center;
         align-items: center;
         color: #000;

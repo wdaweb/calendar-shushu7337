@@ -1,10 +1,21 @@
+<style>
+.calendar{
+    display:inline-block;
+}
+
+
+
+
+
+
 </style>
+
 <h1>Calendar</h1>
 <div class="callyear">
-    <form action="?" method="get">
+    <!-- <form action="?" method="get">
         years:<input type="number" name="year">
         <input type="submit" value="SEND">
-    </form>
+    </form> -->
 </div>
 
 <?php
@@ -43,44 +54,46 @@ if ($month > 12) {
 
 </div> 
 <div class="calendar">
-<table>
-    <thead>
-        <tr>
-            <td>SUN</td>
-            <td>MON</td>
-            <td>TUE</td>
-            <td>WED</td>
-            <td>THU</td>
-            <td>FRI</td>
-            <td>SAT</td>
-        </tr>
-    </thead>
-    <tbody>
-        <?php
-        $firstDay = date("$year-$month-01");
-        $firstDayWeek = date("w", strtotime($firstDay)); //第一天
-        $WeekDays = date("t", strtotime($firstDay));  //總天數
-        $spaceDay=ceil(($firstDayWeek + $WeekDays) / 7);
-        
-        if (date("Y", strtotime($firstDay)))
-            for ($i = 0; $i < $spaceDay; $i++) {
-                echo "<tr>";
-                for ($j = 0; $j < 7; $j++) {
-                    if ($i == 0 && $j < $firstDayWeek) {
-                        echo "<td>";
-                        echo "</td>";
-                    } else {
-                        echo "<td>";
-                        $day = $i * 7 + $j + 1 - $firstDayWeek;
-                        if ($day <= $WeekDays) {
-                            echo $day;
+<div class="pic"><img src="https://picsum.photos/300/200/?random=1">
+    <table>
+        <thead>
+            <tr>
+                <td>SUN</td>
+                <td>MON</td>
+                <td>TUE</td>
+                <td>WED</td>
+                <td>THU</td>
+                <td>FRI</td>
+                <td>SAT</td>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            $firstDay = date("$year-$month-01");
+            $firstDayWeek = date("w", strtotime($firstDay)); //第一天
+            $WeekDays = date("t", strtotime($firstDay));  //總天數
+            $spaceDay=ceil(($firstDayWeek + $WeekDays) / 7);
+            
+            if (date("Y", strtotime($firstDay)))
+                for ($i = 0; $i < $spaceDay; $i++) {
+                    echo "<tr>";
+                    for ($j = 0; $j < 7; $j++) {
+                        if ($i == 0 && $j < $firstDayWeek) {
+                            echo "<td>";
+                            echo "</td>";
+                        } else {
+                            echo "<td>";
+                            $day = $i * 7 + $j + 1 - $firstDayWeek;
+                            if ($day <= $WeekDays) {
+                                echo $day;
+                            }
+                            echo "</td>";
                         }
-                        echo "</td>";
                     }
+                    echo "</tr>";
                 }
-                echo "</tr>";
-            }
-        ?>
-    </tbody>
-</table>
+            ?>
+        </tbody>
+    </table>
+    </div>
 </div>
