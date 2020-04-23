@@ -54,7 +54,7 @@ if ($month > 12) {
 
 </div> 
 <div class="calendar">
-<div class="pic"><img src="https://picsum.photos/300/200/?random=1">
+<div class="pic"><img src="https://picsum.photos/300//?random=1">
     <table>
         <thead>
             <tr>

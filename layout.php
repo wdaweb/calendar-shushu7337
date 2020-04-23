@@ -104,9 +104,9 @@ if (
     <div class="tt">
       <table>
         <thead>
-        
+
           <tr>
-            
+
             <td>SUN</td>
             <td>MON</td>
             <td>TUE</td>
@@ -114,11 +114,11 @@ if (
             <td>THU</td>
             <td>FRI</td>
             <td>SAT</td>
-            
+
           </tr>
-          
+
         </thead>
-        
+
         <tbody>
           <?php
 
