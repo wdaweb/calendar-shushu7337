@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+body{
+  background: #000;
+      background-size: cover;
+      background-image:
+        linear-gradient(rgba(73, 179, 206, 0.15) 1px, transparent 0),
+        linear-gradient(90deg, rgba(200,200,200,0.15) 1px, transparent 0),
+        linear-gradient(rgba(150,150,150,.25) 1px, transparent 0),
+        linear-gradient(90deg, rgba(150,150,150,.25) 1px, transparent 0);
+      background-size: 
+        5px 5px, 5px 5px, 50px 50px, 50px 50px;
+      opacity: 0.9;
+      
+}
+h1 { 
+  font-size: 6em;
+  color: #FFF;
+  text-shadow: 0 0 20px #FF005B;
+  /* font-family: "Fredericka the Great", cursive; */
+  font-family: 'Iceland';
+  font-size: 80px;
+}
+.neon:after{
+  content: attr(data-text);
+  position: relative;
+  top: 0;
+  left: 0; 
+  z-index: -1;
+  color: #ff005b;
+  filter: blur(15px); 
+}
+.neon:before{
+    content: '';
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fe3a80;
+    z-index: -2;
+    opacity: .5;
+    filter: blur(40px);
+}
+thead {
+  font-family: "Monoton", cursive;
+}
+a:link {
+  color: #FFF;
+} /*連結提示*/
+a:visited {
+  color: #FFF;
+} /*已拜訪過過*/
+a:hover {
+  color: #FFF;
+} /*滑過*/
+a:active {
+  color: #FFF;
+} /*按下瞬間*/
+
+.calendar {
+  /* background: rgb(182, 205, 219); */
+  text-shadow: 0 0 20px #FF005B;
+  height: 500px;
+}
+.introm{
+  height: 50px;
+  font-size: 40px;
+  
+}
+table td {
+  border-radius: 50%;
+  text-align: center;
+  color: #000;
+  width: 50px;
+  height: 50px;
+  box-shadow: 1px 1px 3px #000;
+}
+.callyear{
+  color: #fff;
+  font-family: 'Iceland';
+}
+
+.tt {
+  background: #fff;
+  height: 800px;
+}
+table {
+  /* background: #888;  */
+  color: #fff;  
+  
+}
+
+.pic {
+  background: #555;
+  
+}
+img{
+  height: 200;
+  width: 120;
+}
+
+
+/* flipcard */
+
+.caard{
+  position: relative;
+  bottom: 100px;
+  width: 120px;
+  height: 200px;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  transition: 0.5s;
+}
+.caard .front{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  backface-visibility: hidden;
+  transform: rotateX(0deg);
+  transition: 0.3s;
+}
+.caard:hover .front{
+  transform: rotateX(-180deg);
+}
+/* icon前導圖 */
+.caard .back:before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.1);
+}
+.caard .back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #999;
+  backface-visibility: hidden;
+  transform: rotateX(180deg);
+  transition: 0.3s;
+}
+.caard:hover .back{
+  transform: rotateX(0deg);
+}
+.caard .back .details{
+  position: absolute;
+  top:50%;
+  transform: rotateY(-50%);
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.caard .back .details h2{
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  color: #fff;
+}
+.caard .back .details h2 span{
+  color: #a7a7a7;
+  font-size:16px;
+}
+.social-icons{
+  padding: 10px 0;
+}
+.social-icons{
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  background:#262626;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+.social-icons a .f{
+  line-height: 36px;
+}
+
+.social-icons a:hover .fa{
+  background: #e91e63;
+}
