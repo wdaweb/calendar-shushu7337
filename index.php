@@ -1,57 +1,20 @@
-<?php
-
-    $a=false;
-    echo !$a;
-    echo "<hr>";
-    echo $a;
-    $b=1;
-    echo $b++;
-    echo "<hr>";
-    // 算術運算子 +,-,*,/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作業說明</title>
+</head>
+<body>
     
-    $a=2;
-    $b=5;
-    echo $a+$b;
-    echo "<hr>";
-
-    // 字串運算子
-
-    $a="A";
-    $b="B";
-    echo $a;
-    echo "<br>";
-    echo $b;
-    $c=$a . $b;
-    $d=$a + $b;
-    echo "<hr>";
-    echo $c;
-    echo "<hr>";
-    echo $d;
-    echo "<br>";
-    $e="123";
-    $f="333";
-    echo $e;
-    echo "<br>";
-    echo $f;
-
-    echo "<br>";
-    // 三元運算子
-    $a=6;
-    echo ($a>0)?"很貴":"免費";
-    echo "<hr>";
-
-    if($a>0){
-        echo "很貴";
-    }
-    else{
-        echo "免費";
-    }
-
-    echo"<hr>";
-echo "hello world";
-$aa;
-$bb;
-
-$ee;
-$cc;
+<?php
+$month=date("m");
+if(isset($_GET["month"])){
+    $month=$_GET["month"];
+}
 ?>
+<a href="index.php?month=<?=$month-1;?>">上一月(<?=$month-1;?>)</a>
+<span>本月(<?=$month;?>)</span>
+<a href="index.php?month=<?=$month+1;?>">下一月(<?=$month+1;?>)</a>
+</body>
+</html>
