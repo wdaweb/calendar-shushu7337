@@ -53,10 +53,11 @@ if (
 </div>
 
 <div class="container-fluid tt">
-  <div class="col-auto  row align-items-center justify-content-center calendar ">
-    <div class="caard">
-          <div class="front"><img src="../plugins/dot.jpg"   alt=""></div>
-            <div class="back">
+  <div class="row align-items-center justify-content-center calendar ">
+  <div class="row"></div>  
+  <div class="caard col-sm-auto">
+          <div class="front rounded"><img src="../plugins/dot.jpg"  class="rounded" alt=""></div>
+            <div class="back rounded">
               <div class="details">
                   <h2>Shu<br><span>Design</span></h2>
                   <div class="social-icons">
@@ -64,13 +65,13 @@ if (
                       <a href="#"><i class="fa fa-twitter"      aria-hidden="true"></i></a>
                       <a href="#"><i class="fa fa-google-plus"      aria-hidden="true"></i></a>
                       <a href="#"><i class="fa fa-linkedin"     aria-hidden="true"></i></a>
-                      <a href="#"><i class="fa fa-instgram"     aria-hidden="true"></i></a>
+                      <a href="#"><i class="fa fa-instagram"     aria-hidden="true"></i></a>
                   </div>
               </div>
           </div>
     </div>
 
-    <div class="col-6 offset-2 justify-content-center">
+    <div class="main col-6-sm offset-2   justify-content-center">
         <table>
           <thead>
             <tr>
