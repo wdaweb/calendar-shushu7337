@@ -38,20 +38,26 @@ if (
 ?>
 <div class="container-fluid">
   <div class="row justify-content-center">
-      <h1 class="neon" data-test="[Neon-Light]">Calendar</h1>
+      <!-- <h1 class="neon" data-test="[Neon-Light]">Calendar</h1> -->
+      <h1>
+        <span>カ</span>
+        <span>レ</span>
+        <span>ン</span>
+        <span>ダ</span>
+        <span>ー</span>
+      </h1>
     </div>
   </div>
 
 <div class="container-fluid callyear">
   <div class="introm row justify-content-center ">
-    <div class="prev col-2 justify-content-center"><a href="layout.php?month=<?= $month - 1 ?>&year=<?= $year ?>"><i class="fa fa-arrow-circle-left"></i>Prev</a></div>
-    <div class="col-2 justify-content-center">&nbsp&nbsp<?= $year; ?>&nbsp&nbsp</div>
-    <div class="col-1 justify-content-center">/</div>
-    <div class="col-2 ">&nbsp<?= date('M',strtotime("$year-$month")); ?>&nbsp</div>
-    <div class="next col-2 justify-content-center "><a href="layout.php?month=<?= $month + 1 ?>&year=<?= $year ?>">Next<i class="fa fa-arrow-circle-right"></i></a></div>
+    <div class="prev col-sm-2 offset-1 justify-content-center"><a href="layout.php?month=<?= $month - 1 ?>&year=<?= $year ?>"><i class="fa fa-arrow-circle-left"></i>Prev</a></div>
+    <div class="col-sm-2 justify-content-center">&nbsp&nbsp<?= $year; ?>&nbsp&nbsp</div>
+    <div class="col-sm-1 justify-content-center">/</div>
+    <div class="col-sm-2 ">&nbsp<?= date('M',strtotime("$year-$month")); ?>&nbsp</div>
+    <div class="next col-sm-2 justify-content-center "><a href="layout.php?month=<?= $month + 1 ?>&year=<?= $year ?>">Next<i class="fa fa-arrow-circle-right"></i></a></div>
   </div>
 </div>
-
 <div class="container-fluid tt">
   <div class="row align-items-center justify-content-center calendar ">
   <div class="row"></div>  
@@ -71,7 +77,7 @@ if (
           </div>
     </div>
 
-    <div class="main col-6-sm offset-2   justify-content-center">
+    <div class="main col-6-sm offset-1   justify-content-center">
         <table>
           <thead>
             <tr>

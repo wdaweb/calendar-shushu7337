@@ -17,15 +17,58 @@ body{
       
 }
 h1 { 
-  font-size: 6em;
-  color: #FFF;
+  
+  color: #111;
+  font-size: 7.5em;
   text-shadow: 0 0 20px #FF005B;
   /* font-family: "Fredericka the Great", cursive; */
   font-family: 'Iceland';
-  font-size: 80px;
   font-weight: bold;
 }
-.neon:after{
+h1 span{ 
+  animation:animate 2.25s linear infinite;
+}
+h1 span:nth-child(1){
+  animation-delay: 0.25s;
+}
+h1 span:nth-child(2){
+  animation-delay: 0.75s;
+}
+h1 span:nth-child(3){
+  animation-delay: 1.25s;
+}
+h1 span:nth-child(4){
+  animation-delay: 1.75s;
+}
+h1 span:nth-child(5){
+  animation-delay: 2.25s;
+}
+
+@keyframes animate {
+  0%{
+      color: #fff;
+      filter: blur(2px);
+      text-shadow: 0 0 10px #e456b5,
+                  0 0 20px #9900ff,
+                  0 0 40px #00b3ff,
+                  0 0 80px #00ff88,
+                  0 0 120px #fbff00,
+                  0 0 200px #ff5100,
+                  0 0 300px #00fff2,
+                  0 0 400px #00ff9d;
+  }
+  5%,95%{
+      color: #111;
+      filter: blur(0px);
+      text-shadow:none;
+  }
+  100%{
+    text-shadow: 0 0 20px #FF005B;
+  }
+}
+
+
+/* .neon:after{
   content: attr(data-text);
   position: relative;
   top: 0;
@@ -45,7 +88,7 @@ h1 {
     z-index: -2;
     opacity: .5;
     filter: blur(40px);
-}
+} */
 thead {
   font-family: "Monoton", cursive;
 }
@@ -79,10 +122,11 @@ table td {
   border-radius: 50%;
   text-align: center;
   color: rgb(255, 255, 255);
+
   width: 60px;
   height: 60px;
   font-size: 20px;
-  box-shadow: 2px 3px 3px rgb(148, 247, 164);
+  box-shadow: 1px 2px 1px rgb(148, 247, 164);
 }
 
 .callyear{
@@ -93,11 +137,14 @@ table td {
 table {
   /* background: #888;  */
   border-collapse: separate;
-  border-spacing: 15px;
-  color: #fff;
+  border-spacing: 10px;
   font-family: 'Iceland';
+  
 }
-
+.date{
+  color: white;
+  height: 50px;
+}
 
 
 
@@ -112,7 +159,6 @@ img{
   width: 245px;
   height: 350px;
   transform-style: preserve-3d;
-  transform: translateY(10%);
   perspective: 500px;
   transition: 0.5s;
   
