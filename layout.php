@@ -100,26 +100,18 @@ if (
               if (date("Y", strtotime($firstDay)))
                 for ($i = 0; $i <
                   $spaceDay; $i++) {
-                  echo "
-              <tr>
-                ";
+                  echo "<tr>";
                   for ($j = 0; $j < 7; $j++) {
                     if ($i == 0 && $j < $firstDayWeek) {
-                      echo "
-                <td>";
-                      echo "</td>
-                ";
+                      echo "<td>";
+                      echo "</td>";
                     } else {
-                      echo "
-                <td>
-                  ";
+                      echo "<td>";
                       $day = $i * 7 + $j + 1 - $firstDayWeek;
                       if ($day <= $WeekDays) {
                         echo $day;
                       }
-                      echo "
-                </td>
-                ";
+                      echo "</td>";
                     }
                   }
                   echo "
