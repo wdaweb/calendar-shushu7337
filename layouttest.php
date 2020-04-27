@@ -49,7 +49,7 @@ if ($month > 12) {
 <span class="prev"><a href="layouttest.php?month=<?= $month -1 ?>&year=<?= $year?>">Prev</a></span>
 <span>&nbsp&nbsp<?= $year; ?>&nbsp&nbsp</span>
 <span>/</span>
-<span>&nbsp<?= date('M',$month); ?>&nbsp</span>
+<span>&nbsp<?= date('M',strtotime("$year-$month")); ?>&nbsp</span>
 <span class="next"><a href="layouttest.php?month=<?= $month +1 ?>&year=<?= $year?>">Next</a></span>
 
 </div> 
