@@ -1,4 +1,4 @@
-<?php include "./include/"; ?>
+<link rel="stylesheet" href="./include/bootstrap.css">
 <!DOCTYPE html>
 <html lang="en">
 
