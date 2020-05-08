@@ -31,7 +31,7 @@
         <input type="text" name="code">
         <input type="number" name="number">
     花費:
-        <input type="number" name="spend">
+        <input type="number" name="expend">
         <input type="submit" value="儲存">
     </form>
 </body>
