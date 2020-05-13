@@ -1,4 +1,5 @@
-
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./include/bootstrap.css">
 <link rel="stylesheet" href="./css/stylein.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -17,8 +18,8 @@
 
 <body class="d-flex justify-content-around align-items-center flex-column" style="height: 100vh;">
 <header>
-<h1 class="top">Receipt Lottery</h1>
-  <p>Welcome to this system !This page is for the matching invoice of the unified invoice, bless you to win the prize</p>
+<h1 class="top">Receipt  Lottery</h1>
+  <p>Welcome to this system !<p>This page is for the matching invoice of the unified invoice, bless you to win the prize!</p>
 </header>
 <form action="save_invoice.php" method="post"> 
 <div class="card  mx-auto shadow " style="height: 400px;width: 800px;">
