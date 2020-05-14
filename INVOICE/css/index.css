@@ -63,7 +63,6 @@ main {
   body {
 	font-family: 'Noto Sans TC', sans-serif;
 	color: rgba(0, 0, 0, .87);
-	font-weight: 300;
 	line-height: 1
   }
   body,

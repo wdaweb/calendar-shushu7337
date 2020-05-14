@@ -1,7 +1,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./include/bootstrap.css">
-<link rel="stylesheet" href="./css/stylein.css">
+<link rel="stylesheet" href="./css/index.css">
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -48,14 +48,14 @@
           發票列表
         </a>
         <div class="dropdown-menu" >
-          <a class="dropdown-item" href="#">1 - 2</a>
-          <a class="dropdown-item" href="#">3 - 4</a>
-          <a class="dropdown-item" href="#">5 - 6</a>
-          <a class="dropdown-item" href="#">7 - 8</a>
-          <a class="dropdown-item" href="#">9 - 10</a>
-          <a class="dropdown-item" href="#">11 - 12</a>
+          <a class="dropdown-item" href="list.php?period=1">1 - 2</a>
+          <a class="dropdown-item" href="list.php?period=2">3 - 4</a>
+          <a class="dropdown-item" href="list.php?period=3">5 - 6</a>
+          <a class="dropdown-item" href="list.php?period=4">7 - 8</a>
+          <a class="dropdown-item" href="list.php?period=5">9 - 10</a>
+          <a class="dropdown-item" href="list.php?period=6">11 - 12</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="list.php">當期</a>
+          <a class="dropdown-item" href="list.php?period=<?=ceil(date("n")/2);?>">當期</a>
         </div>
       </li>
       </div>
