@@ -7,7 +7,7 @@ main {
 	margin: 0 auto;
 	width: 100%;
 	max-width: 100%;
-	min-height: 400px;
+	min-height: 500px;
 	box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
 	  0px 5px 8px 0px rgba(0, 0, 0, 0.14),
 	  0px 1px 14px 0px rgba(0, 0, 0, 0.12);
@@ -69,10 +69,9 @@ main {
   body,
   header {
 	background: rgba(46, 42, 42, 0.424);
-	border-radius: 15px;
+	border-radius: 10px;
   }
   header {
-	padding: ;
 	min-height: 150px;
 	text-align: center;
 	font-weight: 500;
