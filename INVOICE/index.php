@@ -70,13 +70,14 @@
   <p>Welcome to this system !<p>This page is for the matching invoice of the unified invoice, bless you to win the prize!</p>
 </header>
 <form action="save_invoice.php" method="post"> 
-<div class="card  mx-auto shadow " style="height: 400px;width: 800px;">
+<div class="card  mx-auto shadow " style="height: 400px;width: 600px;">
     <div class="info row no-gutters">
       <div class="col-md">
           <div class="form-group m-0">
             <h1 class="form-group col-md m-3">  
               2020 Receipt Lottery
             </h1>
+          <div class="py-1">
             <div class="year px-5 py-1 form-group col-md m-1" >
               <label for="inputYear p-1">Year</label>
               <select id="inputYear" class="form-control" name="year">
@@ -98,18 +99,19 @@
                 <option class="dropdown-item" value="6">11-12</option>
               </select>
             </div>
+            </div>
+            <div class="px-5 py-1">
+              <div class="number form-group col p-0 m-1">獎號</div>
+                <input type="text" name="code" size="3px">
+                <input type="number" name="number">
+              </div>
+            <div class="px-5 py-1">
+              <div class="expend form-group col p-0 m-1">花費</div>
+                <input type="number" name="expend">
+                <input type="submit" value="儲存">
+              </div>
+            </div>
           </div>
-          <div class="px-5 py-1">
-          <div class="number form-group col p-0 m-1">獎號</div>
-          <input type="text" name="code" size="3px">
-          <input type="number" name="number">
-          </div>
-          <div class="px-5 py-1">
-          <div class="expend form-group col p-0 m-1">花費</div>
-          <input type="number" name="expend">
-          <input type="submit" value="儲存">
-          </div>
-        </div>
       </div>
     </div>
   </div>

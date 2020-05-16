@@ -8,7 +8,7 @@ if(isset($_GET['period'])){
 ?>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./include/bootstrap.css">
-<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/list.css">
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -72,42 +72,56 @@ if(isset($_GET['period'])){
     </div>
 </nav>
 
+<header class="mx-auto">
+<h1 class="top">Receipt  List</h1>
+
+</header>
 
 </div>
 <?php
 // $period=1;
 $sql="select * from `invoice` where period ='$period'";
+// $rows=all($table,$codition);
 // echo $sql;
 $rows=$pdo->query($sql)->fetchALL();
 ?>
-        <table>
-            <tr>
-                <td>ID</td>
-                <td>英文碼</td>
-                <td>數字</td>
-                <td>月份</td>
-                <td>花費</td>
-                <td>年份</td>
-                <td collspan 2>操作</td>
-              <?php
-                foreach($rows as $row){
-                    ?>
-                <tr>  
-                <td><?=$row['id'];?></td>
-                <td><?=$row['code'];?></td>
-                <td><?=$row['number'];?></td>
-                <td><?=$row['period'];?></td>
-                <td><?=$row['expend'];?></td>
-                <td><?=$row['year'];?></td>
-                
-                <td>
-                <!-- <a href='edit_user.php?user=".$row['id']."'><button>編輯</button></a>";
-                <a href='delete_user.php?user=".$row['id']."'><button>刪除</button></a>"; -->
-                </td>
-                </tr>
-                <?php
-                }
-                ?>
-             </tr>
+
+<div class="p-1">
+  <table class="table text-center table-bordered table-striped table-hover table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">年份</th>
+        <th scope="col">月份</th>
+        <th scope="col">英文碼</th>
+        <th scope="col">數字</th>
+        <th scope="col">花費</th>
+        <th scope="col">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+        foreach($rows as $row){
+          ?>
+      <tr>
+        <td scope="row"><?=$row['id'];?></td>
+        <td><?=$row['year'];?></td>
+        <td><?=$row['period'];?></td>
+        <td><?=$row['code'];?></td>
+        <td><?=$row['number'];?></td>
+        <td><?=$row['expend'];?></td>
+        <td colspan="2">
+          <a href="edit_user.php?user=<?=$row['id'];?>"><button>編輯</button></a>
+          
+          <a href="delete_user.php?user=<?=$row['id'];?>"><button>刪除</button></a>
+          
+        </td>
+      <?php
+        }
+      ?>
+      </tr>
+    </tbody>
+  </table>
+</div>
 </body>
 </html>
