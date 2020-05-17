@@ -1,0 +1,90 @@
+
+main {
+	padding: 0px 0px 64px 50px;
+  }
+  .card {
+	border-radius: 16px;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 100%;
+	min-height: 400px;
+	box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+	  0px 5px 8px 0px rgba(0, 0, 0, 0.14),
+	  0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+	overflow: hidden;
+	background-image: url(https://source.unsplash.com/user/shushu7337/likes/2048x1080);
+	background-size: cover;
+  }
+  
+  .info {
+	position: relative;
+	width: 100%;
+	height: 400px;
+	background-color: rgb(248, 248, 248);
+	transform: translateY(100%)
+	  translateY(-88px)
+	  translateZ(0);
+	transition: transform 0.5s ease-out;
+  }
+  
+  .info:before {
+	z-index: -1;
+	display: block;
+	position: absolute;
+	content: ' ';
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-image:  url(https://source.unsplash.com/user/shushu7337/likes/2048x1080);
+	filter: blur(10px);
+	background-size: cover;
+	opacity: 0.25;
+	transform: translateY(-100%)
+	  translateY(88px)
+	  translateZ(0);
+	transition: transform 0.5s ease-out;
+  }
+  
+  .card:hover .info,
+  .card:hover .info:before {
+	transform: translateY(0) translateZ(0);
+  }
+  
+  .number .expend{
+	  padding-left: 50px;
+  }
+
+  * {
+	box-sizing: border-box;
+	position: relative;
+	transition: all .3s ease
+  }
+  
+  body {
+	font-family: 'Noto Sans TC', sans-serif;
+	color: rgba(0, 0, 0, .87);
+	line-height: 1
+  }
+  body,
+  header {
+	background: rgba(46, 42, 42, 0.424);
+	border-radius: 10px;
+  }
+  header {
+	min-height: 150px;
+	text-align: center;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.87);
+	margin: 65px;
+	width: 600px;
+  }
+  h1.top {
+	font-family: 'Noto Sans TC', sans-serif;
+	margin:30px;
+	margin-bottom: 0.5em;
+	font-weight: bolder;
+	line-height: 1.2;
+	color: #212529;
+	font-size: 2.618em
+  }
+ 
