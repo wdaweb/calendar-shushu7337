@@ -62,7 +62,6 @@
     </div>
 </nav>
 
-<button class="btn btn-dark" a href="./include/add_invoice.php">新增獎號</button>
 <div>
     <form action="save_number.php" method="post">
         <table class="table table-bordered">
@@ -70,13 +69,13 @@
             <td>年月份</td>
             <td>
                     <select id="inputYear" class="form-control" name="year">
-                        <option selected>Choose Year...</option>
+                        <option selected>請選擇年份...</option>
                         <option class="dropdown-item" value="2020" href="#">2020</option>
                         <option class="dropdown-item" value="2021" href="#">2021</option>
                         <option class="dropdown-item" value="2022" href="#">2022</option>
                     </select>
                     <select id="inputMonth" class="form-control" name="period">
-                        <option selected>Choose Month...</option>
+                        <option selected>請選擇月份...</option>
                         <option class="dropdown-item" value="1">1-2</option>
                         <option class="dropdown-item" value="2">3-4</option>
                         <option class="dropdown-item" value="3">5-6</option>

@@ -30,10 +30,10 @@ function del($table,$arg){
     }else{
         $sql=$sql." where `id`='$arg'";
     }
-    echo $sql;
-    echo "<hr>";
+    // echo $sql;
+    // echo "<hr>";
     // exec只會回傳成功或失敗
-    // return $pdo->exec($sql);
+    return $pdo->exec($sql);
 }
 ?>
 
@@ -94,7 +94,7 @@ function all($table,...$arg){
     if(isset($arg[1])){
         $sql=$sql . $arg[1];
     }
-    echo $sql;
+    // echo $sql;
     return $pdo->query($sql)->fetchAll();
 }
 ?>
