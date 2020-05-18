@@ -1,4 +1,5 @@
 <?php include "./com/base.php"; 
+
 $period=ceil(date("n")/2);
 // echo $period;   
 if(isset($_GET['period'])){
@@ -30,19 +31,19 @@ if(isset($_GET['period'])){
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-item nav-link" href="query.php">發票兌獎</a>
-        <a class="nav-item nav-link" href="award.php">獎號輸入</a>
+        <a class="nav-item nav-link" href="add_invoice.php">獎號輸入</a>
         
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
           發票獎號
         </a>
         <div class="dropdown-menu" >
-          <a class="dropdown-item" href="#">1 - 2</a>
-          <a class="dropdown-item" href="#">3 - 4</a>
-          <a class="dropdown-item" href="#">5 - 6</a>
-          <a class="dropdown-item" href="#">7 - 8</a>
-          <a class="dropdown-item" href="#">9 - 10</a>
-          <a class="dropdown-item" href="#">11 - 12</a>
+        <a class="dropdown-item" href="invoice.php?period=1<?=($period==1)?>">1 - 2</a>
+          <a class="dropdown-item" href="invoice.php?period=2<?=($period==2)?>">3 - 4</a>
+          <a class="dropdown-item" href="invoice.php?period=3<?=($period==3)?>">5 - 6</a>
+          <a class="dropdown-item" href="invoice.php?period=4<?=($period==4)?>">7 - 8</a>
+          <a class="dropdown-item" href="invoice.php?period=5<?=($period==5)?>">9 - 10</a>
+          <a class="dropdown-item" href="invoice.php?period=6<?=($period==6)?>">11 - 12</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="invoice.php">當期</a>
         </div>
@@ -79,14 +80,14 @@ if(isset($_GET['period'])){
 
 </div>
 <?php
-// $period=1;
-$sql="select * from `invoice` where period ='$period'";
-// $rows=all($table,$codition);
-// echo $sql;
-$rows=$pdo->query($sql)->fetchALL();
+// $sql="select * from `invoice` where period ='$period'";
+// $rows=$pdo->query($sql)->fetchALL();
+
+$rows=all('invoice',['period'=>$period]);
+// 注意上處不是用逗號分隔，是用=>
 ?>
 
-<div class="p-1">
+<div class="px-5 py-2 my-3">
   <table class="table text-center table-bordered table-striped table-hover table-dark">
     <thead>
       <tr>

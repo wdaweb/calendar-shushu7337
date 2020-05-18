@@ -7,12 +7,14 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>統一發票管理系統</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
@@ -59,5 +61,94 @@
     </div>
     </div>
 </nav>
+
+<button class="btn btn-dark" a href="./include/add_invoice.php">新增獎號</button>
+<div>
+    <form action="save_number.php" method="post">
+        <table class="table table-bordered">
+        <tr>
+            <td>年月份</td>
+            <td>
+                    <select id="inputYear" class="form-control" name="year">
+                        <option selected>Choose Year...</option>
+                        <option class="dropdown-item" value="2020" href="#">2020</option>
+                        <option class="dropdown-item" value="2021" href="#">2021</option>
+                        <option class="dropdown-item" value="2022" href="#">2022</option>
+                    </select>
+                    <select id="inputMonth" class="form-control" name="period">
+                        <option selected>Choose Month...</option>
+                        <option class="dropdown-item" value="1">1-2</option>
+                        <option class="dropdown-item" value="2">3-4</option>
+                        <option class="dropdown-item" value="3">5-6</option>
+                        <option class="dropdown-item" value="4">7-8</option>
+                        <option class="dropdown-item" value="5">9-10</option>
+                        <option class="dropdown-item" value="6">11-12</option>
+                    </select>
+                    
+                    </select>
+            </td>
+        </tr>
+        <tr>
+            <td>特別獎</td>
+            <td>
+                <input type="number" name="num1">
+            </td>
+        </tr>
+        <tr>
+            <td>特獎</td>
+            <td>
+                <input type="number" name="num2">
+            </td>
+        </tr>
+        <tr>
+            <td>頭獎</td>
+            <td>
+                <input type="number" name="num3[]"><br>
+                <input type="number" name="num3[]"><br>
+                <input type="number" name="num3[]"><br>
+                <input type="number" name="num3[]"><br>
+            </td>
+        </tr>
+        <tr>
+            <td>二獎</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>三獎</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>四獎</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>五獎</td>
+            <td>
+            
+            </td>
+        </tr>
+        <tr>
+            <td>六獎</td>
+            <td>
+                <input type="number" name="num4[]"><br>
+                <input type="number" name="num4[]">
+            </td>
+        </tr>
+        <tr>
+            <td>增開六獎</td>
+            <td></td>
+        </tr>
+        </table>
+
+        <input type="submit" value="send">
+    </form>
+</div>
 </body>
+
 </html>
