@@ -25,7 +25,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-item nav-link" href="query.php">發票兌獎</a>
-        <a class="nav-item nav-link" href="add_invoice.php">獎號輸入</a>
+        <a class="nav-item nav-link" href="add_invoice.php">兌獎獎號輸入</a>
         
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
@@ -62,9 +62,9 @@
     </div>
 </nav>
 
-<div>
+<div class="card mx-auto ">
     <form action="save_number.php" method="post">
-        <table class="table table-bordered">
+        <table class="table table-bordered text-center">
         <tr>
             <td>年月份</td>
             <td>
