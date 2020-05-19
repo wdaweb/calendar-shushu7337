@@ -22,7 +22,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link" href="query.php">發票兌獎</a>
+        <a class="nav-item nav-link" href="invoice.php">發票兌獎</a>
         <a class="nav-item nav-link" href="add_invoice.php">獎號輸入</a>
         
       <li class="nav-item dropdown">
@@ -149,13 +149,12 @@
                     // $tn 為增開六獎
                     $target_num=$tn;
                 }
-
+                if(mb_substr($ins['number'],$start,$len) == $target_num){
+                echo $ins['number']."恭喜中獎";
+                }else{
+                    echo $ins['number']."再接再厲";
+                }
             }echo "<br>";
-                    if(mb_substr($ins['number'],$start,$len) == $target_num){
-                    echo $ins['number']."恭喜中獎";
-                    }else{
-                        echo $ins['number']."再接再厲";
-                    }
             
         }
         

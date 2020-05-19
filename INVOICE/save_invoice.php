@@ -25,7 +25,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link" href="query.php">發票兌獎</a>
+        <a class="nav-item nav-link" href="invoice.php">發票兌獎</a>
         <a class="nav-item nav-link" href="add_invoice.php">獎號輸入</a>
         
       <li class="nav-item dropdown">
