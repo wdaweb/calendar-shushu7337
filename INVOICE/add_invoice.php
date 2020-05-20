@@ -1,19 +1,18 @@
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./include/bootstrap.css">
-<link rel="stylesheet" href="./css/stylein.css">
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="include/bootstrap.css">
+<link rel="stylesheet" href="css/add_i.css">
+<link href="https://fonts.googleapis.com/css2?family=Iceland&family=Noto+Sans+TC:wght@300;500&display=swap" rel="stylesheet">
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>統一發票管理系統</title>
-    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -62,9 +61,9 @@
     </div>
 </nav>
 
-<div>
-    <form action="save_number.php" method="post">
-        <table class="table table-bordered">
+<div class="d1 d-flex justify-content-center">
+    <form action="save_number.php" method="post" class="f1 d-flex justify-content-center" >
+        <table class="table table-bordered text-center justify-content-center">
         <tr>
             <td>年月份</td>
             <td>
