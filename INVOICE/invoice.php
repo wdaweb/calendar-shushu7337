@@ -15,9 +15,9 @@ if(isset($_GET['period'])){
 }
 $year=date("Y");
 ?>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./include/bootstrap.css">
-<link rel="stylesheet" href="./css/stylein.css">
+<link href="https://fonts.googleapis.com/css2?family=Iceland&family=Noto+Sans+TC:wght@300;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="include/bootstrap.css">
+<link rel="stylesheet" href="css/add_i.css">
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -28,7 +28,6 @@ $year=date("Y");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>統一發票管理系統</title>
-    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -78,18 +77,14 @@ $year=date("Y");
     </div>
 </nav>
 
-<button class="btn btn-dark" a href="./include/add_invoice.php">新增獎號</button>
 <?php
-
-
 $num1=find('award_number',['period'=>$period,'year'=>$year,'type'=>1]);  //單筆
 $num2=find('award_number',['period'=>$period,'year'=>$year,'type'=>2]);  //單筆
 $num3=all('award_number',['period'=>$period,'year'=>$year,'type'=>3]);   //多筆
 $num3=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多筆
-
-
 ?>
-<div>
+
+<div class="">
     <table class="table table-bordered">
     <tr>
         <td>年月份</td>

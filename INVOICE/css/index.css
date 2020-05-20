@@ -1,4 +1,8 @@
-
+body {
+  font-family: 'Iceland', 'Noto Sans TC';
+  color: rgba(0, 0, 0, .87);
+  line-height: 1;
+}
 main {
 	padding: 0px 0px 64px 50px;
   }
@@ -60,11 +64,6 @@ main {
 	transition: all .3s ease
   }
   
-  body {
-	font-family: 'Noto Sans TC', sans-serif;
-	color: rgba(0, 0, 0, .87);
-	line-height: 1
-  }
   body,
   header {
 	background: rgba(46, 42, 42, 0.424);
@@ -79,7 +78,6 @@ main {
 	width: 600px;
   }
   h1.top {
-	font-family: 'Noto Sans TC', sans-serif;
 	margin:30px;
 	margin-bottom: 0.5em;
 	font-weight: bolder;

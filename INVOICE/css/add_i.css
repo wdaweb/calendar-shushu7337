@@ -1,0 +1,9 @@
+body{
+    font-family: 'Iceland', 'Noto Sans TC';
+}
+.table{
+    margin: 50px;
+}
+td>input{
+    width: 80%;
+}
