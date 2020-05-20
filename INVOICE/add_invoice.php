@@ -3,8 +3,8 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="include/bootstrap.css">
-<link rel="stylesheet" href="css/add_i.css">
 <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Noto+Sans+TC:wght@300;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/add_i.css">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,12 +61,12 @@
     </div>
 </nav>
 
-<div class="d1 d-flex justify-content-center">
-    <form action="save_number.php" method="post" class="f1 d-flex justify-content-center" >
+<div class="d-flex justify-content-center ">
+    <form action="save_number.php" method="post" class=" d-flex justify-content-center" >
         <table class="table table-bordered text-center justify-content-center">
         <tr>
             <td>年月份</td>
-            <td>
+            <td   colspan="2">
                     <select id="inputYear" class="form-control" name="year">
                         <option selected>請選擇年份...</option>
                         <option class="dropdown-item" value="2020" href="#">2020</option>
@@ -89,62 +89,68 @@
         <tr>
             <td>特別獎</td>
             <td>
-                <input type="number" name="num1">
+                <input  type="number" name="num1">
             </td>
+            <td>一千萬元</td>
         </tr>
         <tr>
             <td>特獎</td>
             <td>
-                <input type="number" name="num2">
+                <input  type="number" name="num2">
             </td>
+            <td>兩百萬元</td>
         </tr>
         <tr>
             <td>頭獎</td>
             <td>
-                <input type="number" name="num3[]"><br>
-                <input type="number" name="num3[]"><br>
-                <input type="number" name="num3[]"><br>
-                <input type="number" name="num3[]"><br>
+                <input  type="number" name="num3[]"><br>
+                <input  type="number" name="num3[]"><br>
+                <input  type="number" name="num3[]"><br>
+                <input  type="number" name="num3[]"><br>
             </td>
+            <td>二十萬元</td>
         </tr>
         <tr>
             <td>二獎</td>
-            <td>
-
-            </td>
+            <td>末 7 位數號碼與頭獎中獎號碼末 7 位相同者</td>
+            <td>四萬元</td>
         </tr>
         <tr>
             <td>三獎</td>
-            <td>
-
-            </td>
+            <td>末 6 位數號碼與頭獎中獎號碼末 6 位相同者</td>
+            <td>一萬元</td>
         </tr>
         <tr>
             <td>四獎</td>
-            <td>
-                
-            </td>
+            <td>末 5 位數號碼與頭獎中獎號碼末 5 位相同者</td>
+            <td>四千元</td>
         </tr>
         <tr>
             <td>五獎</td>
-            <td>
-            
-            </td>
+            <td>末 4 位數號碼與頭獎中獎號碼末 4 位相同者</td>
+            <td>一千元</td>
         </tr>
         <tr>
             <td>六獎</td>
-            <td>
-                <input type="number" name="num4[]"><br>
-                <input type="number" name="num4[]">
-            </td>
+            <td>末 3 位數號碼與頭獎中獎號碼末 3 位相同者</td>
+            <td>兩百元</td>
         </tr>
         <tr>
             <td>增開六獎</td>
-            <td></td>
+            <td>
+                <input type="number" name="num4[]"><br>
+                <input type="number" name="num4[]"><br>
+                <input type="number" name="num4[]">
+            </td>
+            <td>兩百元</td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <input type="submit" value="send">
+          </td>
         </tr>
         </table>
 
-        <input type="submit" value="send">
     </form>
 </div>
 </body>

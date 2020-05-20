@@ -2,15 +2,8 @@ body{
     font-family: 'Iceland', 'Noto Sans TC';
 }
 .table{
-    top: 0;
-    left: 0;
-    height: 300px;
-    width:60%;
+    margin: 50px;
 }
-.f1{
-    width: 60%;
-}
-.d1{
-    left: 50%;
-    top: 50%;
+td>input{
+    width: 80%;
 }
