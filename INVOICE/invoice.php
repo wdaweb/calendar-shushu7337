@@ -16,11 +16,11 @@ if(isset($_GET['period'])){
 $year=date("Y");
 ?>
 <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Noto+Sans+TC:wght@300;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="include/bootstrap.css">
-<link rel="stylesheet" href="css/add_i.css">
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="include/bootstrap.css">
+<link rel="stylesheet" href="css/add_i.css">
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,11 +84,11 @@ $num3=all('award_number',['period'=>$period,'year'=>$year,'type'=>3]);   //多�
 $num3=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多筆
 ?>
 
-<div class="">
-    <table class="table table-bordered">
+<div class="d-flex justify-content-center">
+    <table class="table table-bordered text-center justify-content-center">
     <tr>
         <td>年月份</td>
-        <td><?=$year;?><?$monthStr[$period];?></td>
+        <td  colspan="2"><?=$year;?><?$monthStr[$period];?></td>
     </tr>
     <tr>
         <td>特別獎</td>
