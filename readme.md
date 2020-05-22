@@ -6,3 +6,7 @@ add_invoice.php & invoice.php 表單修改
 * 改成卡片式與首頁盡風格可能相似
 * 修改時注意剩餘網頁的css可否共用及優先權問題
 * html語意盡可能完整不要從頭div到尾看不懂你在D尛
+
+
+我把php myadmin 資料庫瘦身了
+請效法感恩
