@@ -17,7 +17,7 @@ $year=date("Y");
 ?>
 <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Noto+Sans+TC:wght@300;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="include/bootstrap.css">
-<link rel="stylesheet" href="css/add_i.css">
+<link rel="stylesheet" href="css/invoice.css">
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -84,11 +84,14 @@ $num3=all('award_number',['period'=>$period,'year'=>$year,'type'=>3]);   //多�
 $num3=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多筆
 ?>
 
-<div class="">
-    <table class="table table-bordered">
+<div class="d-flex justify-content-center">
+    <table class="table text-center table-bordered justify-content-center table-striped table-dark table-hover">
     <tr>
-        <td>年月份</td>
-        <td><?=$year;?><?$monthStr[$period];?></td>
+        <td colspan="3" class="h3">年月份</td>
+        
+    </tr>
+    <tr>
+    <td colspan="3" class="h3"><?=$year;?><?$monthStr[$period];?></td>
     </tr>
     <tr>
         <td>特別獎</td>
@@ -132,30 +135,35 @@ $num3=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多�
     </tr>
     <tr>
         <td>二獎</td>
+        <td>末 7 位數號碼與頭獎中獎號碼末 7 位相同者</td>
         <td>
             <a href="award.php?aw=4&year=<?=$year;?>&period=<?=$period?>">兌獎</a>
         </td>
     </tr>
     <tr>
         <td>三獎</td>
+        <td>末 6 位數號碼與頭獎中獎號碼末 6 位相同者</td>
         <td>
             <a href="award.php?aw=5&year=<?=$year;?>&period=<?=$period?>">兌獎</a>
         </td>
     </tr>
     <tr>
         <td>四獎</td>
+        <td>末 5 位數號碼與頭獎中獎號碼末 5 位相同者</td>
         <td>
             <a href="award.php?aw=6&year=<?=$year;?>&period=<?=$period?>">兌獎</a>
         </td>
     </tr>
     <tr>
         <td>五獎</td>
+        <td>末 4 位數號碼與頭獎中獎號碼末 4 位相同者</td>
         <td>
             <a href="award.php?aw=7&year=<?=$year;?>&period=<?=$period?>">兌獎</a>
         </td>
     </tr>
     <tr>
         <td>六獎</td>
+        <td>末 3 位數號碼與頭獎中獎號碼末 3 位相同者</td>
         <td>
             <a href="award.php?aw=8&year=<?=$year;?>&period=<?=$period?>">兌獎</a>
         </td>

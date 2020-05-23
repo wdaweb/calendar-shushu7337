@@ -2,8 +2,8 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="include/bootstrap.css">
 <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Noto+Sans+TC:wght@300;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="include/bootstrap.css">
 <link rel="stylesheet" href="css/add_i.css">
 <!DOCTYPE html>
 <html lang="en">
@@ -63,17 +63,17 @@
 
 <div class="d-flex justify-content-center ">
     <form action="save_number.php" method="post" class=" d-flex justify-content-center" >
-        <table class="table table-bordered text-center justify-content-center">
+        <table class="table table-bordered text-center justify-content-center table-dark">
         <tr>
             <td>年月份</td>
             <td   colspan="2">
-                    <select id="inputYear" class="form-control" name="year">
+                    <select id="inputYear" class="a form-control" name="year">
                         <option selected>請選擇年份...</option>
                         <option class="dropdown-item" value="2020" href="#">2020</option>
                         <option class="dropdown-item" value="2021" href="#">2021</option>
                         <option class="dropdown-item" value="2022" href="#">2022</option>
                     </select>
-                    <select id="inputMonth" class="form-control" name="period">
+                    <select id="inputMonth" class="a form-control" name="period">
                         <option selected>請選擇月份...</option>
                         <option class="dropdown-item" value="1">1-2</option>
                         <option class="dropdown-item" value="2">3-4</option>
@@ -89,24 +89,24 @@
         <tr>
             <td>特別獎</td>
             <td>
-                <input  type="number" name="num1">
+                <input  type="number" name="num1" placeholder="請輸入獎號">
             </td>
             <td>一千萬元</td>
         </tr>
         <tr>
             <td>特獎</td>
             <td>
-                <input  type="number" name="num2">
+                <input  type="number" name="num2" placeholder="請輸入獎號">
             </td>
             <td>兩百萬元</td>
         </tr>
         <tr>
             <td>頭獎</td>
             <td>
-                <input  type="number" name="num3[]"><br>
-                <input  type="number" name="num3[]"><br>
-                <input  type="number" name="num3[]"><br>
-                <input  type="number" name="num3[]"><br>
+                <input  type="number" name="num3[]" placeholder="請輸入獎號"><br>
+                <input  type="number" name="num3[]" placeholder="請輸入獎號"><br>
+                <input  type="number" name="num3[]" placeholder="請輸入獎號"><br>
+                <input  type="number" name="num3[]" placeholder="請輸入獎號"><br>
             </td>
             <td>二十萬元</td>
         </tr>
@@ -138,15 +138,15 @@
         <tr>
             <td>增開六獎</td>
             <td>
-                <input type="number" name="num4[]"><br>
-                <input type="number" name="num4[]"><br>
-                <input type="number" name="num4[]">
+                <input type="number" name="num4[]" placeholder="請輸入獎號"><br>
+                <input type="number" name="num4[]" placeholder="請輸入獎號"><br>
+                <input type="number" name="num4[]" placeholder="請輸入獎號">
             </td>
             <td>兩百元</td>
         </tr>
         <tr>
           <td colspan="3">
-            <input type="submit" value="send">
+            <input class="send" type="submit" value="send">
           </td>
         </tr>
         </table>

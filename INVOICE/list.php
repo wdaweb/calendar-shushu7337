@@ -7,9 +7,9 @@ if(isset($_GET['period'])){
 }
 // echo $period;
 ?>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Iceland&family=Noto+Sans+TC:wght@300;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./include/bootstrap.css">
-<link rel="stylesheet" href="./css/list.css">
+<link rel="stylesheet" href="css/list.css">
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -19,7 +19,6 @@ if(isset($_GET['period'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>統一發票管理系統</title>
-    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -73,7 +72,7 @@ if(isset($_GET['period'])){
     </div>
 </nav>
 
-<header class="mx-auto">
+<header class="mx-auto ">
 <h1 class="top">Receipt  List</h1>
 
 </header>
