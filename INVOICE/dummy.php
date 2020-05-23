@@ -1,6 +1,6 @@
 <?php
 include_once "com/base.php";
-$num=1000;
+$num=50;
 // 建立code 的陣列
 $char=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",];
 
