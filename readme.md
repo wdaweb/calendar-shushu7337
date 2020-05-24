@@ -8,5 +8,3 @@ add_invoice.php & invoice.php 表單修改
 * html語意盡可能完整不要從頭div到尾看不懂你在D尛
 
 
-我把php myadmin 資料庫瘦身了
-請效法感恩

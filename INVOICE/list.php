@@ -1,11 +1,15 @@
-<?php include "./com/base.php"; 
-
+<?php include "com/base.php"; 
+$year=date("Y");
 $period=ceil(date("n")/2);
-// echo $period;   
+// echo $period;
+if(isset($_GET['year'])){
+    $year=$_GET['year'];
+}   
 if(isset($_GET['period'])){
     $period=$_GET['period'];
 }
 // echo $period;
+// echo $year;
 ?>
 <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Noto+Sans+TC:wght@300;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./include/bootstrap.css">
@@ -64,7 +68,7 @@ if(isset($_GET['period'])){
           <a class="dropdown-item" href="list.php?period=5">9 - 10</a>
           <a class="dropdown-item" href="list.php?period=6">11 - 12</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="list.php?period=<?=ceil(date("n")/2);?>">當期</a>
+          <a class="dropdown-item" href="list.php?year<?=date("Y");?>?period=<?=ceil(date("n")/2);?>">當期</a>
         </div>
       </li>
       </div>
@@ -82,7 +86,7 @@ if(isset($_GET['period'])){
 // $sql="select * from `invoice` where period ='$period'";
 // $rows=$pdo->query($sql)->fetchALL();
 
-$rows=all('invoice',['period'=>$period]);
+$rows=all('invoice',['year'=>$year,'period'=>$period]);
 // 注意上處不是用逗號分隔，是用=>
 ?>
 
@@ -90,7 +94,7 @@ $rows=all('invoice',['period'=>$period]);
   <table class="table text-center table-bordered table-striped table-hover table-dark">
     <thead>
       <tr>
-        <th scope="col">Id</th>
+        <!-- <th scope="col">Id</th> -->
         <th scope="col">年份</th>
         <th scope="col">月份</th>
         <th scope="col">英文碼</th>
@@ -104,7 +108,7 @@ $rows=all('invoice',['period'=>$period]);
         foreach($rows as $row){
           ?>
       <tr>
-        <td scope="row"><?=$row['id'];?></td>
+        <!-- <td scope="row"><?=$row['id'];?></td> -->
         <td><?=$row['year'];?></td>
         <td><?=$row['period'];?></td>
         <td><?=$row['code'];?></td>

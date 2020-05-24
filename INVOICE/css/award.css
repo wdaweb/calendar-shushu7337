@@ -1,0 +1,22 @@
+body{
+    font-family: 'Iceland', 'Noto Sans TC';
+    background: rgba(46, 42, 42, 0.424);
+}
+.table{
+    margin: 50px;
+    width: 50%;
+    height: 600px;
+}
+td>input{
+    width: 80%;
+    border-radius: 3px;
+    text-align: center;     
+    margin: 1%;
+    border: 0px;
+}
+td>select{
+    margin: 5%;
+}
+.a{
+    width: 80%;
+}

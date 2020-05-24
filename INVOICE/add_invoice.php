@@ -31,12 +31,12 @@
           發票獎號
         </a>
         <div class="dropdown-menu" >
-          <a class="dropdown-item" href="#">1 - 2</a>
-          <a class="dropdown-item" href="#">3 - 4</a>
-          <a class="dropdown-item" href="#">5 - 6</a>
-          <a class="dropdown-item" href="#">7 - 8</a>
-          <a class="dropdown-item" href="#">9 - 10</a>
-          <a class="dropdown-item" href="#">11 - 12</a>
+          <a class="dropdown-item" href="invoice.php?period=1">1 - 2</a>
+          <a class="dropdown-item" href="invoice.php?period=2">3 - 4</a>
+          <a class="dropdown-item" href="invoice.php?period=3">5 - 6</a>
+          <a class="dropdown-item" href="invoice.php?period=4">7 - 8</a>
+          <a class="dropdown-item" href="invoice.php?period=5">9 - 10</a>
+          <a class="dropdown-item" href="invoice.php?period=6">11 - 12</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="invoice.php">當期</a>
         </div>

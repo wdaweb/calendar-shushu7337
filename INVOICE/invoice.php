@@ -56,7 +56,7 @@ $year=date("Y");
           <a class="dropdown-item" href="invoice.php?period=5<?=($period==5)?>">9 - 10</a>
           <a class="dropdown-item" href="invoice.php?period=6<?=($period==6)?>">11 - 12</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="invoice.php">當期</a>
+          <a class="dropdown-item" href="invoice.php?year=<?=date("Y");?>?period=<?=ceil(date("n")/2);?>">當期</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -83,7 +83,7 @@ $year=date("Y");
 $num1=find('award_number',['period'=>$period,'year'=>$year,'type'=>1]);  //單筆
 $num2=find('award_number',['period'=>$period,'year'=>$year,'type'=>2]);  //單筆
 $num3=all('award_number',['period'=>$period,'year'=>$year,'type'=>3]);   //多筆
-$num3=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多筆
+$num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多筆
 ?>
 
 <div class="d-flex justify-content-center">

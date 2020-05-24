@@ -39,12 +39,12 @@ main {
 	height: 100%;
 	overflow: hidden;
 	background-image:  url(https://source.unsplash.com/user/shushu7337/likes/2048x1080);
-	filter: blur(10px);
+	filter: blur(10px)grayscale(1);
 	background-size: cover;
 	opacity: 0.25;
-	transform: translateY(-100%)
-	  translateY(88px)
-	  translateZ(0);
+	transform: translateY(-100%);
+	transform:translateY(88px);
+	transform:translateZ(0);
 	transition: transform 0.5s ease-out;
   }
   
@@ -66,7 +66,7 @@ main {
   body,
   header {
 	background: rgba(46, 42, 42, 0.424);
-	border-radius: 10px;
+	border-radius: 15px;
   }
   header {
 	min-height: 150px;
@@ -85,3 +85,6 @@ main {
 	font-size: 2.618em
   }
  
+table>input{
+	height: 80%;
+}
