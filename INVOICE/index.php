@@ -16,6 +16,7 @@
 
 <body >
 
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand h1 mb-0" href="index.php">Receipt Lottery</a>
@@ -76,7 +77,7 @@
             <h1 class="form-group col-md m-2">  
               2020 Receipt Lottery
             </h1>
-          <div class="py-1">
+          <div class="py-2">
             <div class="year px-5 py-1 form-group col-md m-1" >
               <label for="inputYear p-1">Year</label>
               <select id="inputYear" class="form-control" name="year">
