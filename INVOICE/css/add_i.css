@@ -4,6 +4,7 @@ body{
 }
 .table{
     margin: 50px;
+    align-items: center;
 }
 td>input{
     width: 80%;

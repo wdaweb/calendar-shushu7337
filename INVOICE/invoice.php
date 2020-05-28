@@ -22,7 +22,7 @@ $year=date("Y");
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="include/bootstrap.css">
-<link rel="stylesheet" href="css/add_i.css">
+<link rel="stylesheet" href="css/invoice.css">
 <!DOCTYPE html>
 <html lang="en">
 
@@ -93,15 +93,12 @@ $num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多�
 <div class="d-flex justify-content-center">
     <table class="table text-center table-bordered justify-content-center table-striped table-dark table-hover">
     <tr>
-        <td colspan="3" class="h3">年月份</td>
-        
-    </tr>
-    <tr>
-    <td colspan="3" class="h3"><?=$year;?><?$monthStr[$period];?></td>
+        <td>年月份</td>
+    <td colspan="" class="h3"><?=$year;?> <?php echo "&emsp;"."/";?> <?=$monthStr[$period];?></td>
     </tr>
     <tr>
         <td>特別獎</td>
-        <td>
+        <td class="h3">
             <?php
                 if(!empty($num1['number'])){
                     echo $num1['number'];
@@ -114,7 +111,7 @@ $num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多�
     </tr>
     <tr>
         <td>特獎</td>
-        <td>
+        <td class="h3">
             <?php
                 if(!empty($num1['number'])){
                     echo $num1['number'];
@@ -127,7 +124,7 @@ $num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多�
     </tr>
     <tr>
         <td>頭獎</td>
-        <td>
+        <td class="h3">
             <?php
                 foreach($num3 as $num){
                     // 下方變數$num後面要接陣列 因為上方的$num3為二維陣列
@@ -176,10 +173,10 @@ $num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多�
     </tr>
     <tr>
         <td>增開六獎</td>
-        <td>
+        <td class="h3">
             <?php
                 foreach($num4 as $num){
-                    echo $num['number'] . "<br>";
+                    echo $num['number'] . "&emsp;";
                 }
             ?>     
         </td>

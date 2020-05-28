@@ -6,4 +6,13 @@ body{
 }
 .table{
     margin: 50px;
+    font-size: 1rem;
+}
+
+a:link{
+    color: rgb(241, 235, 224);
+    text-decoration: none;
+}
+a:hover{
+    color: rgb(63, 219, 211);
 }
