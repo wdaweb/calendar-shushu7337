@@ -34,7 +34,7 @@ include "com/nav.php";
           <div class="pb-2">
             <div class="year px-5 py-1 form-group col-md m-1 h3 " >
               <label for="inputYear p-1">Year</label>
-              <select id="inputYear" class="form-control" name="year" required>
+              <select id="inputYear" class="form-control slt" name="year" required>
                 <option selected >請選擇輸入年份</option>
                 <option class="dropdown-item" value="2020" href="#">2020</option>
                 <option class="dropdown-item" value="2021" href="#">2021</option>
@@ -43,7 +43,7 @@ include "com/nav.php";
             </div>
             <div class="month px-5 py-1 form-group col-md m-1 h3" >
               <label for="inputMonth">Month</label>
-              <select id="inputMonth" class="form-control" name="period" required>
+              <select id="inputMonth" class="form-control slt" name="period" required>
                 <option selected require>請選擇輸入年份</option>
                 <option class="dropdown-item" value="1">1-2</option>
                 <option class="dropdown-item" value="2">3-4</option>
@@ -56,13 +56,13 @@ include "com/nav.php";
             </div>
             <div class="px-5 py-1">
               <div class="number form-group col p-0 mb-1">獎號</div>
-                <input class="ml-1 mr-3" type="text" name="code" size="3px" placeholder="AA" required="required">
-                <input type="number" name="number" placeholder="12345678" required="required">
+                <input class="ml-1 mr-3 slt" type="text" name="code" size="3px" placeholder="AA" required="required">
+                <input class="slt" type="number" name="number" placeholder="12345678" required="required">
               </div>
             <div class="px-5 py-1">
               <div class="expend form-group col p-0 mb-1">花費</div>
-                <input class="ml-1 " type="number" name="expend" placeholder="請輸入金額" required="required">
-                <input class="float-right btn  btn-outline-dark" type="submit" value="儲存" required="required">
+                <input class="ml-1 slt" type="number" name="expend" placeholder="請輸入金額" required="required">
+                <input class="float-right btn  btn-outline-light slt" type="submit" value="儲存" required="required">
               </div>
             </div>
           </div>
