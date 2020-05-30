@@ -57,13 +57,9 @@ main {
   * {
 	box-sizing: border-box;
 	position: relative;
-	transition: all .3s ease
+	transition: all .3s ease;
   }
   
-  header {
-	/* background: rgba(22, 20, 20, 0.424); */
-	/* border-radius: 15px; */
-  }
   header {
 	min-height: 150px;
 	text-align: center;

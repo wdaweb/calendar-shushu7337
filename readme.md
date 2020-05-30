@@ -17,3 +17,4 @@ add_invoice.php & invoice.php 表單修改
 2. list & invoice 區的 tabel寬度可以再小一點 讓視覺感能更集中
 3. list 區的刪除做完了 還剩invoice內的還沒
 4. 可以再獎號輸入的地方放入判斷式讓輸入過的獎號不能再輸入
+5. favicon.ico可以加上去
