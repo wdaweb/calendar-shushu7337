@@ -19,9 +19,9 @@
 <?php
 include "com/nav.php";
 ?>
-<header class="mx-auto">
-<h1 class="top">Receipt  Lottery</h1>
-  <p class="h5">Welcome to this system !<p class="h5">This page is for the matching invoice of the unified invoice, bless you to win the prize!</p>
+<header class="mx-auto mb-0">
+<h1 class="top ">Receipt  Lottery</h1>
+  <p class="h5">Welcome to this system !This page is for the matching invoice of the unified invoice, bless you to win the prize!</p>
 </header>
 <form action="save_invoice.php" method="post"> 
 <div class="card  mx-auto shadow " style="height: 400px;width: 600px;">

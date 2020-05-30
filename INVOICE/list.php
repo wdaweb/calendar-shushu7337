@@ -66,10 +66,12 @@ $rows=all('invoice',['year'=>$year,'period'=>$period]);
         <td><?=$row['number'];?></td>
         <td><?=$row['expend'];?></td>
         <td colspan="2">
-          <a href="edit_user.php?user=<?=$row['id'];?>"><button>編輯</button></a>
+          <a href="com/base.php?user=<?=$row['id'];?>"><button>編輯</button>
+          </a>
           
-          <a href="delete_user.php?user=<?=$row['id'];?>"><button>刪除</button></a>
-          
+          <a href="del.php?id=<?=$row['id'];?>"><button>刪除</button>
+        </a>
+
         </td>
       <?php
         }

@@ -10,3 +10,10 @@ add_invoice.php & invoice.php 表單修改
 
 頁面表格垂直置中有些需要修正
 將表格select input 標籤改深色background
+
+表單list 的地方刪除跟編輯的功能再把它做出來
+
+1. index header區要再做調整(跟下方div的地方)
+2. list & invoice 區的 tabel寬度可以再小一點 讓視覺感能更集中
+3. list 區的刪除做完了 還剩invoice內的還沒
+4. 可以再獎號輸入的地方放入判斷式讓輸入過的獎號不能再輸入
