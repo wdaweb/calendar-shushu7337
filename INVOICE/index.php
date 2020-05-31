@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="include/bootstrap.css">
 <link rel="stylesheet" href="css/index.css">
 <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Noto+Sans+TC:wght@300;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/7b3164b4a9.js" crossorigin="anonymous"></script>
 <!DOCTYPE html>
 <html lang="en">
 

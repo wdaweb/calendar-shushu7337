@@ -21,6 +21,7 @@ $year=date("Y");
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/7b3164b4a9.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="include/bootstrap.css">
 <link rel="stylesheet" href="css/invoice.css">
 <!DOCTYPE html>
@@ -43,12 +44,12 @@ $num2=find('award_number',['period'=>$period,'year'=>$year,'type'=>2]);  //單�
 $num3=all('award_number',['period'=>$period,'year'=>$year,'type'=>3]);   //多筆
 $num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多筆
 ?>
-
-<div class="d-flex justify-content-center">
-    <table class="table text-center table-bordered justify-content-center table-striped table-dark table-hover">
+<div class="container">
+    <div class="d-flex justify-content-center mt-5">
+    <table class="inv table text-center table-bordered justify-content-center table-striped table-dark table-hover">
     <tr>
         <td>年月份</td>
-    <td colspan="" class="h3"><?=$year;?> <?php echo "&emsp;"."/";?> <?=$monthStr[$period];?></td>
+    <td colspan="" class="h3"><?=$year;?><span class="h5">年</span><?php echo "&emsp;"."/"."&emsp;";?> <?=$monthStr[$period];?><span class="h5">月</span></td>
     </tr>
     <tr>
         <td>特別獎</td>
@@ -141,6 +142,7 @@ $num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多�
 
 
     </table>
+    </div>
 </div>
 </body>
 

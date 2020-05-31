@@ -4,6 +4,7 @@ body{
 }
 .table{
     margin: 50px;
+    margin-top: 5em;
     width: 50%;
     height: 600px;
 }

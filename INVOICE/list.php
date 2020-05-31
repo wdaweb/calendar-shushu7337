@@ -1,13 +1,22 @@
-<?php include "com/base.php"; 
+<?php 
+include "com/base.php"; 
 $year=date("Y");
 $period=ceil(date("n")/2);
 // echo $period;
 if(isset($_GET['year'])){
-    $year=$_GET['year'];
+  $year=$_GET['year'];
 }   
 if(isset($_GET['period'])){
-    $period=$_GET['period'];
+  $period=$_GET['period'];
 }
+                  $monthStr=[
+                    '1'=>"1 - 2",
+                    '2'=>"3 - 4",
+                    '3'=>"5 - 6",
+                    '4'=>"7 - 8",
+                    '5'=>"9 - 10",
+                    '6'=>"11 - 12",
+                  ];
 // echo $period;
 // echo $year;
 ?>
@@ -17,6 +26,7 @@ if(isset($_GET['period'])){
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/7b3164b4a9.js" crossorigin="anonymous"></script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,12 +37,6 @@ if(isset($_GET['period'])){
 <body>
 <?php include "com/nav.php";?>  
 
-<header class="mx-auto ">
-<h1 class="top">Receipt  List</h1>
-
-</header>
-
-</div>
 <?php
 // $sql="select * from `invoice` where period ='$period'";
 // $rows=$pdo->query($sql)->fetchALL();
@@ -40,9 +44,9 @@ if(isset($_GET['period'])){
 $rows=all('invoice',['year'=>$year,'period'=>$period]);
 // 注意上處不是用逗號分隔，是用=>
 ?>
-
-<div class="px-5 py-2 my-3">
-  <table class="table text-center table-bordered table-striped table-hover table-dark">
+<div class="container">
+  <div class="px-5 py-2 my-3 justify-content-center mt-5">
+  <table class="table text-center table-bordered table-striped table-hover table-dark justify-content-center mx-auto">
     <thead>
       <tr>
         <!-- <th scope="col">Id</th> -->
@@ -61,8 +65,8 @@ $rows=all('invoice',['year'=>$year,'period'=>$period]);
       <tr>
         <!-- <td scope="row"><?=$row['id'];?></td> -->
         <td><?=$row['year'];?></td>
-        <td><?=$row['period'];?></td>
-        <td><?=$row['code'];?></td>
+        <td><?=$monthStr[$period];?></td>
+        <td><?=$row['code'];?></>
         <td><?=$row['number'];?></td>
         <td><?=$row['expend'];?></td>
         <td colspan="2">
@@ -79,6 +83,7 @@ $rows=all('invoice',['year'=>$year,'period'=>$period]);
       </tr>
     </tbody>
   </table>
+  </div>
 </div>
 </body>
 </html>
