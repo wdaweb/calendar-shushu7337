@@ -74,7 +74,7 @@ $rows=all('invoice',['year'=>$year,'period'=>$period]);
           <a href="upd.php?user=<?=$row['id'];?>"><button>編輯</button>
           </a>
           
-          <a href="del.php?id=<?=$row['id'];?>"><button>刪除</button>
+          <a href="del.php?id=<?=$row['id'];?>&period=<?=$monthStr[$period];?>"><button>刪除</button>
         </a>
 
         </td>

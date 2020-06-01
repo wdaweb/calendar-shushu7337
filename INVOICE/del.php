@@ -8,10 +8,10 @@ session_start();
 ?>
 <?php
 $id=$_GET['id'];
-
+$period=$_GET['period'];
 del("invoice",$id);
 
-to("list.php");
+to("list.php?period=".$period);
 
 
 
