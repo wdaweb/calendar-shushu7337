@@ -57,23 +57,20 @@ main {
   * {
 	box-sizing: border-box;
 	position: relative;
-	transition: all .3s ease
+	transition: all .3s ease;
   }
   
-  header {
-	background: rgba(22, 20, 20, 0.424);
-	border-radius: 15px;
-  }
   header {
 	min-height: 150px;
 	text-align: center;
 	font-weight: 500;
 	color: #dad9bd;
 	margin: 65px;
-	width: 600px;
+	width: 100%;
   }
   h1.top {
 	margin:30px;
+	margin-top:3em;
 	margin-bottom: 0.5em;
 	font-weight: bolder;
 	line-height: 1.2;

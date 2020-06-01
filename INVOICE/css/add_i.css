@@ -5,22 +5,22 @@ body{
 }
 .table{
     margin: 50px;
+    width: 60%;
+    margin-top: 5em;
     align-items: center;
 }
 td>input{
-    width: 80%;
+    width: 60%;
     border-radius: 3px;
     text-align: center;     
     margin: 1%;
     border: 0px;
+    height: 30px;
 }
 td>select{
-    margin: 5%;
+    margin: 20%;
     
 }
 .a{
     width: 80%;
-}
-.talbe.tb1{
-    vertical-align: inherit;
 }

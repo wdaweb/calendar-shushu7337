@@ -7,13 +7,14 @@
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/nav.css">
 <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Noto+Sans+TC:wght@300;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/7b3164b4a9.js" crossorigin="anonymous"></script>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Receipt Lotter</title>
+  <title>Receipt Lottery</title>
 </head>
 
 <body >
@@ -21,12 +22,12 @@
 <?php
 include "com/nav.php";
 ?>
-<header class="mx-auto">
-<h1 class="top">Receipt  Lottery</h1>
-  <p class="h5">Welcome to this system !<p class="h5">This page is for the matching invoice of the unified invoice, bless you to win the prize!</p>
+<header class="mx-auto mb-0">
+<h1 class="top ">Receipt  Lottery</h1>
+  <p class="h4">Welcome to this system !This page is for the matching invoice of the unified invoice, bless you to win the prize!</p>
 </header>
 <form action="save_invoice.php" method="post"> 
-<div class="card  mx-auto shadow " style="height: 400px;width: 600px;">
+<div class="card  mt-4 mx-auto shadow " style="height: 400px;width: 600px;">
     <div class="info row no-gutters">
       <div class="col-md">
           <div class="form-group m-0">

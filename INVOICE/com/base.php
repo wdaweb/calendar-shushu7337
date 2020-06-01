@@ -17,7 +17,6 @@ session_start();
 function del($table,$arg){
     global $pdo;
     $sql="delete from $table ";
-    
     // 如果$arg為陣列的話
     if(is_array($arg)){
         $tmp=[];
@@ -29,7 +28,7 @@ function del($table,$arg){
     }else{
         $sql=$sql." where `id`='$arg'";
     }
-    // echo $sql;
+    echo $sql;
     // echo "<hr>";
     // exec只會回傳成功或失敗
     return $pdo->exec($sql);
