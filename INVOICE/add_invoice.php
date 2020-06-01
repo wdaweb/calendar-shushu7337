@@ -1,9 +1,11 @@
-
+<link rel="shortcut icon" href="imgs/dot.ico" type="image/x-icon" />
+<script src="https://kit.fontawesome.com/7b3164b4a9.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Noto+Sans+TC:wght@300;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="include/bootstrap.css">
+<link rel="stylesheet" href="css/nav.css">
 <link rel="stylesheet" href="css/add_i.css">
 <!DOCTYPE html>
 <html lang="en">
@@ -20,9 +22,9 @@
   
 <div class="d-flex justify-content-center ">
     <form action="save_number.php" method="post" class=" d-flex justify-content-center" >
-        <table class="table table-bordered text-center justify-content-center table-dark">
+        <table class="tb1 table table-bordered text-center justify-content-center table-dark ">
         <tr>
-            <td>年月份</td>
+            <td >年月份</td>
             <td colspan="2">
                     <select id="inputYear" class="a form-control" name="year">
                         <option selected>請選擇年份...</option>

@@ -1,9 +1,11 @@
-
+<link rel="shortcut icon" href="imgs/dot.ico" type="image/x-icon" />
+<script src="https://kit.fontawesome.com/7b3164b4a9.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="include/bootstrap.css">
 <link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/nav.css">
 <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Noto+Sans+TC:wght@300;700&display=swap" rel="stylesheet">
 <!DOCTYPE html>
 <html lang="en">
