@@ -13,7 +13,4 @@ del("invoice",$id);
 
 to("list.php?period=".$period);
 
-
-
-
 ?>

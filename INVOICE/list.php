@@ -71,10 +71,10 @@ $rows=all('invoice',['year'=>$year,'period'=>$period]);
         <td><?=$row['number'];?></td>
         <td><?=$row['expend'];?></td>
         <td colspan="2">
-          <a href="upd.php?user=<?=$row['id'];?>"><button>編輯</button>
+          <a href="upd.php?id=<?=$row['id'];?>"><button>編輯</button>
           </a>
           
-          <a href="del.php?id=<?=$row['id'];?>&period=<?=$monthStr[$period];?>"><button>刪除</button>
+          <a href="del.php?id=<?=$row['id'];?>&period=<?=$row['period'];?>"><button>刪除</button>
         </a>
 
         </td>
