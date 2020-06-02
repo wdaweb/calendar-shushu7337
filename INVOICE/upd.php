@@ -1,9 +1,6 @@
 <?php
 include_once "com/base.php";
-$dsn="mysql:host=localhost;charset=utf8;dbname=invoice";
-$pdo=new PDO($dsn,'root',"");
-date_default_timezone_set("Asia/Taipei");
-session_start();
+
 ?>
 
 <link rel="shortcut icon" href="imgs/dot.ico" type="image/x-icon" />
@@ -61,11 +58,16 @@ include "com/nav.php";
         <tr>
             <td>獎號</td>
             <td><input class="ml-1 mr-3 slt" type="text" name="code" size="3px" placeholder="AA" required="required">
-                <input class="slt" type="number" name="number" placeholder="12345678" required="required"></td>
+                <input class="slt" type="number" name="number" placeholder="12345678" required="required">
+            </td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
+            <td>花費</td>
+            <td>
+            <input class="ml-1 slt" type="number" name="expend" placeholder="請輸入金額" required="required">
+                
+
+            </td>
         </tr>
         <tr>
           <td colspan="3">
