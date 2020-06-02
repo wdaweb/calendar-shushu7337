@@ -23,6 +23,7 @@ include_once "com/base.php";
 <body>
 <?php
 include "com/nav.php";
+$id=$_GET['id'];
 ?>
 <div class="container mt-5">
     <div class="justify-content-center align-item-center ">
@@ -57,14 +58,14 @@ include "com/nav.php";
         </tr>
         <tr>
             <td>獎號</td>
-            <td><input class="ml-1 mr-3 slt" type="text" name="code" size="3px" placeholder="AA" required="required">
-                <input class="slt" type="number" name="number" placeholder="12345678" required="required">
+            <td><input class="ml-1 mr-3 slt" type="text" name="code" size="3px" placeholder="AA" required="required" value="<?=find("invoice",$id)['code'] ?>">
+                <input class="slt" type="number" name="number" placeholder="12345678" required="required" value="<?=find("invoice",$id)['number'] ?>">
             </td>
         </tr>
         <tr>
             <td>花費</td>
             <td>
-            <input class="ml-1 slt" type="number" name="expend" placeholder="請輸入金額" required="required">
+            <input class="ml-1 slt" type="number" name="expend" placeholder="請輸入金額" required="required" value="<?=find("invoice",$id)['expend'] ?>">
                 
 
             </td>

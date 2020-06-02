@@ -65,7 +65,7 @@ include "com/nav.php";
             <div class="px-5 py-1">
               <div class="expend form-group col p-0 mb-1">花費</div>
                 <input class="ml-1 slt" type="number" name="expend" placeholder="請輸入金額" required="required">
-                <input class="float-right btn  btn-outline-light slt" type="submit" value="儲存" required="required">
+                <input class="float-right btn  btn-outline-light slt" type="submit" value="儲存" >
               </div>
             </div>
           </div>
