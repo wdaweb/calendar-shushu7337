@@ -1,6 +1,9 @@
 <?php
 include_once "com/base.php";
-
+?>
+<?php
+$id=$_GET['id'];
+$period=$_GET['period'];
 ?>
 
 <link rel="shortcut icon" href="imgs/dot.ico" type="image/x-icon" />
@@ -23,7 +26,6 @@ include_once "com/base.php";
 <body>
 <?php
 include "com/nav.php";
-$id=$_GET['id'];
 ?>
 <div class="container mt-5">
     <div class="justify-content-center align-item-center ">
@@ -72,7 +74,7 @@ $id=$_GET['id'];
         </tr>
         <tr>
           <td colspan="3">
-            <input class="send h3 btn  btn-outline-light" type="submit" value="send">
+            <input class="send h3 btn  btn-outline-light" type="submit" value="send<?=save("invoice",$id);?>">
           </td>
         </tr>
         </table>
