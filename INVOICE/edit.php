@@ -29,14 +29,14 @@ include "com/nav.php";
 ?>
 <div class="container mt-5">
     <div class="justify-content-center align-item-center ">
-    <form action="save_number.php" method="post" class=" d-flex justify-content-center" >
+    <form action="update.php" method="post" class=" d-flex justify-content-center" >
         <table class="tb1 table table-bordered text-center justify-content-center table-dark ">
         <tr>
             <td >年月份</td>
             <td colspan="2">
                 <div class="row">
                     <div class="col">
-                        <select id="inputYear" class="a form-control mx-auto" name="year">
+                        <select id="inputYear" class="a form-control mx-auto" name="year" required> 
                         <option selected>請選擇月份...</option>
                             <option class="dropdown-item" value="2020" href="#">2020</option>
                             <option class="dropdown-item" value="2021" href="#">2021</option>
@@ -44,7 +44,7 @@ include "com/nav.php";
                         </select>
                     </div>
                     <div class="col">
-                        <select id="inputMonth" class="a form-control mx-auto" name="period">
+                        <select id="inputMonth" class="a form-control mx-auto" name="period" required>
                             <option selected>請選擇月份...</option>
                             <option class="dropdown-item" value="1">1-2</option>
                             <option class="dropdown-item" value="2">3-4</option>
@@ -60,21 +60,21 @@ include "com/nav.php";
         </tr>
         <tr>
             <td>獎號</td>
-            <td><input class="ml-1 mr-3 slt" type="text" name="code" size="3px" placeholder="AA" required="required" value="<?=find("invoice",$id)['code'] ?>">
-                <input class="slt" type="number" name="number" placeholder="12345678" required="required" value="<?=find("invoice",$id)['number'] ?>">
+            <td><input class="ml-1 mr-3 slt" type="text" name="code" size="3px" placeholder="AA" required="required" value="<?=find("invoice",$id)['code'] ?>" required>
+                <input class="slt" type="number" name="number" placeholder="12345678" required="required" value="<?=find("invoice",$id)['number'] ?>" required>
             </td>
         </tr>
         <tr>
             <td>花費</td>
             <td>
-            <input class="ml-1 slt" type="number" name="expend" placeholder="請輸入金額" required="required" value="<?=find("invoice",$id)['expend'] ?>">
-                
+            <input class="ml-1 slt" type="number" name="expend" placeholder="請輸入金額" required="required" value="<?=find("invoice",$id)['expend'] ?>" required>
+            <input type="hidden" name="id" value=<?=$id?>>
 
             </td>
         </tr>
         <tr>
           <td colspan="3">
-            <input class="send h3 btn  btn-outline-light" type="submit" value="send<?=save("invoice",$id);?>">
+            <input class="send h3 btn  btn-outline-light" type="submit" value="send">
           </td>
         </tr>
         </table>
