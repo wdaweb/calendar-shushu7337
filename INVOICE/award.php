@@ -82,7 +82,7 @@ $monthStr=[
               "period"=>$_GET['period'],
               "type"=>$award_type[$_GET['aw']][1]
             ]);
-            
+            echo $award_nums;
           ?>
         </td>
       </tr>
