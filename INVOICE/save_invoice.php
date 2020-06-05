@@ -20,15 +20,13 @@
 
 <body >
 
-<?php include "com/nav.php";?>
-
 
 
 </body>
 
 </html>
 <?php
-    include "./com/base.php";
+    include "com/base.php";
     // 可以將$_POST進來的資料設立新變數來做檢查，避免php混亂
     // 如：
     // $period=htmlspecialchars() trim($_POST['period']);
@@ -55,15 +53,19 @@
       'number'=>$_POST['number'],
       'expend'=>$_POST['expend'],
     ];
-    $res=save("invoice",$data);
-
-
-    if($res==1){
-        echo "新增成功<br>";
-        echo "<a href='inovice.php'>繼續輸入</a><br>";
-        echo "<a href='list.php'>發票列表</a>";
-    }else{
-        echo "新增失敗";
-    }
+    save("invoice",$data);
+    // $res=save("invoice",$data);
+  
+    to("index.php");
+    
+    
+    // if($res==1){
+    //   //  echo "新增成功<br>";
+    //   //  echo "<a href='inovice.php'>繼續輸入</a><br>";
+    //   //  echo "<a href='list.php'>發票列表</a>";
+    //    to("list.php");
+    // }else{
+    //     echo "新增失敗";
+    // }
 
 ?>

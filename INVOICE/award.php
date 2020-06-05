@@ -91,7 +91,7 @@ $monthStr=[
         <td>
           <?php
             $award_numbers=all("award_number",[
-            "year"=>$_GET['year'],
+            "year"=>$_GET['year'],  
             "period"=>$_GET['period'],
             "type"=>$award_type[$_GET['aw']][1]
             ]);

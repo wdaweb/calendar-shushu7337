@@ -71,7 +71,6 @@
                 <input  type="number" name="num3[]" placeholder="請輸入獎號"><br>
                 <input  type="number" name="num3[]" placeholder="請輸入獎號"><br>
                 <input  type="number" name="num3[]" placeholder="請輸入獎號"><br>
-                <input  type="number" name="num3[]" placeholder="請輸入獎號"><br>
             </td>
             <td>二十萬元</td>
         </tr>
