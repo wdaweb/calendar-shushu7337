@@ -52,11 +52,11 @@ $num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多�
     <table class="inv table text-center table-bordered justify-content-center table-striped table-dark table-hover">
     <tr>
         <td>年月份</td>
-    <td colspan="" class="h3"><?=$year;?><span class="h5">年</span><?php echo "&emsp;"."/"."&emsp;";?> <?=$monthStr[$period];?><span class="h5">月</span></td>
+    <td colspan="" class="h3 num"><?=$year;?><span class="h5">年</span><?php echo "&emsp;"."/"."&emsp;";?> <?=$monthStr[$period];?><span class="h5">月</span></td>
     </tr>
     <tr>
         <td>特別獎</td>
-        <td class="h3">
+        <td class="h3 num">
             <?php
                 if(!empty($num1['number'])){
                     echo $num1['number'];
@@ -69,7 +69,7 @@ $num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多�
     </tr>
     <tr>
         <td>特獎</td>
-        <td class="h3">
+        <td class="h3 num">
             <?php
                 if(!empty($num1['number'])){
                     echo $num1['number'];
@@ -82,7 +82,7 @@ $num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多�
     </tr>
     <tr>
         <td>頭獎</td>
-        <td class="h3">
+        <td class="h3 num">
             <?php
                 foreach($num3 as $num){
                     // 下方變數$num後面要接陣列 因為上方的$num3為二維陣列
@@ -131,7 +131,7 @@ $num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多�
     </tr>
     <tr>
         <td>增開六獎</td>
-        <td class="h3">
+        <td class="h3 num">
             <?php
                 foreach($num4 as $num){
                     echo $num['number'] . "&emsp;";

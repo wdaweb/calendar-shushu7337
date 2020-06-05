@@ -51,12 +51,12 @@ $rows=all('invoice',['year'=>$year,'period'=>$period]);
     <thead>
       <tr>
         <!-- <th scope="col">Id</th> -->
-        <th scope="col">年份</th>
-        <th scope="col">月份</th>
-        <th scope="col">英文碼</th>
-        <th scope="col">數字</th>
-        <th scope="col">花費</th>
-        <th scope="col">操作</th>
+        <th class="text-info"scope="col">年份</th>
+        <th class="text-info"scope="col">月份</th>
+        <th class="text-info"scope="col">英文碼</th>
+        <th class="text-info"scope="col">數字</th>
+        <th class="text-info"scope="col">花費</th>
+        <th class="text-info"scope="col">操作</th>
       </tr>
     </thead>
     <tbody>
@@ -71,10 +71,10 @@ $rows=all('invoice',['year'=>$year,'period'=>$period]);
         <td><?=$row['number'];?></td>
         <td><?=$row['expend'];?></td>
         <td colspan="2">
-          <a href="edit.php?id=<?=$row['id'];?>&period=<?=$row['period'];?>"><button>編輯</button>
+          <a class="btn btn-outline-secondary btn-sm " href="edit.php?id=<?=$row['id'];?>&period=<?=$row['period'];?>">編輯</a>
           </a>
           
-          <a href="del.php?id=<?=$row['id'];?>&period=<?=$row['period'];?>"><button>刪除</button>
+          <a class="btn btn-outline-secondary btn-sm " href="del.php?id=<?=$row['id'];?>&period=<?=$row['period'];?>">刪除</a>
         </a>
 
         </td>

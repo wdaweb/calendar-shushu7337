@@ -20,12 +20,15 @@ a:hover{
 }
 
 .table{
-    vertical-align: center;
     margin: 50px;
     margin-top: 5em;
     font-size: 1rem;
     width: 60%;
 }
-.inv, .table td {
-    vertical-align: center;
+.table td{
+    vertical-align: middle;
+}
+
+.num{
+    color: lightcoral;
 }
