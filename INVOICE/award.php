@@ -127,7 +127,7 @@ $monthStr=[
                       $target_num=mb_substr($tn,$start,$len);
                   }else{
                       // $tn 為增開六獎
-                      $target_num=$tn;
+                       $target_num=$tn;
                   }
                   if(mb_substr($ins['number'],$start,$len) == $target_num){
                   echo $ins['number']."恭喜中獎";
