@@ -125,7 +125,7 @@ $num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //å¤šç­
 
         <input type="hidden" id='year' name='year' value="<?=$year?>">
         <input type="hidden" id='period' name='period' value="<?=$period?>">
-        <input type="hidden" id='num1' name='num1' value="<?=$num1['number']?>">
+         <input type="hidden" id='num1' name='num1' value="<?=$num1['number']?>">
         <input type="hidden" id='num2' name='num2' value="<?=$num2['number']?>">
         <?php   
             $a=1;
@@ -138,7 +138,7 @@ $num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //å¤šç­
             foreach($num4 as $num){
                 echo "<input type='hidden' id='"."num4".$a."' "."name='"."num3".$a."' "."value='".$num['number']."'";
             }
-        ?>
+        ?> 
         
 
     </table>

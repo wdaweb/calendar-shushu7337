@@ -39,7 +39,7 @@ $monthStr=[
         echo "<a href='invoice.php'>發票獎號</a>";
         exit();
     }
-
+    // 
     $award_type=[
         1=>["特別獎",1,8],
         2=>["特獎",2,8],
@@ -122,7 +122,7 @@ $monthStr=[
                 </td>
             </tr>
             <tr>
-                <td>該期發票號碼</td>
+                <td>中獎發票號碼</td>
                 <td class="num">
                     <?php
                         $invoices=all("invoice",[
@@ -144,7 +144,7 @@ $monthStr=[
                               }
                               if(mb_substr($ins['number'],$start,$len) == $target_num){
                               $chk_num++;
-                              echo $ins['number']."&emsp;";
+                              echo $ins['code'].$ins['number']."&emsp;";
                               }else{
                                   // echo $ins['number']."再接再厲";
                               }
