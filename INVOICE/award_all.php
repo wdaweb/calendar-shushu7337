@@ -75,28 +75,29 @@ $monthStr=[
                 <td><?=$monthStr[$period];?></td>
             </tr>
 
-            <tr>
+            <!-- <tr>
                 <td>本期兌獎獎號</td>
 
                 <td class="num">
+                
                     <?php
-                    $type=1;
-                    for($type>1;$type<5;$type++)
-                        $award_numbers=all("award_number",[
-                        "year"=>$_POST['year'],  
-                        "period"=>$_POST['period'],
-                        "type"=>$award_type[$_POST[$type]][1]
-                        ]);
+                    // 撈出本期中獎號碼
+                    $aw=1;
+                        
+                    $award_numbers=all("award_number",[
+                    "year"=>$_POST['year'],
+                    "period"=>$_POST['period'],
+                    ]);
                     $t_num=[];
                     foreach($award_numbers as $num){
-                        echo $num ['number']."&emsp;";
+                        // echo $num ['number']."&emsp;";
                         $t_num[]=$num ['number'];
                     }
                   ?>
                 </td>
-            </tr>
+            </tr> -->
             <tr>
-                <td>該期發票號碼</td>
+                <td>中獎發票號碼</td>
                 <td class="num">
                     <?php
                         $invoices=all("invoice",[
@@ -105,10 +106,12 @@ $monthStr=[
                           ]);
                           // 設立變數來接有?中獎
                         $chk_num=0;
+                        echo "<hr>";
+                        for($aw>0;$aw<10;$aw++){
                         foreach($invoices as $ins){
-                          foreach($t_num as $tn){
-                              $len=$award_type[$aw][2];
-                              $start=8-$len;
+                            foreach($t_num as $tn){
+                                $len=$award_type[$aw][2];
+                                $start=8-$len;
                               // 針對增開六獎特別處理
                               if($aw!=9){
                                   $target_num=mb_substr($tn,$start,$len);
@@ -122,8 +125,9 @@ $monthStr=[
                               }else{
                                   // echo $ins['number']."再接再厲";
                               }
-                          }//echo "<br>";
+                            }//echo "<br>";
                         }
+                    }
                     ?>
                 </td>
             </tr>
