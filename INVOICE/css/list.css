@@ -11,3 +11,6 @@ body{
     margin: 50px;
     margin-top: 5em;
 }
+.table td{
+    vertical-align: middle;
+}

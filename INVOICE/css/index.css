@@ -91,3 +91,7 @@ table>input{
 	background: #262624;
 	color: #fff6dd;
 }
+.modal-content, .mo{
+	background-color: #063a32;
+	opacity: 0.8;
+}

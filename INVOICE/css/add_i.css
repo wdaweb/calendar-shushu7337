@@ -24,6 +24,14 @@ td>select{
 .a{
     width: 80%;
 }
+.slt option{
+	background: #0c0c09;
+	color: #fff6dd;
+}
+.slt{
+	background: #262624;
+	color: #fff6dd;
+}
 .table td{
     vertical-align: middle;
 }

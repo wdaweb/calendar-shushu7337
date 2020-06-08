@@ -49,6 +49,7 @@ $num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多�
 ?>
 <div class="container">
     <div class="d-flex justify-content-center mt-5">
+    <form action="award_all.php" method="post">
     <table class="inv table text-center table-bordered justify-content-center table-striped table-dark table-hover">
     <tr>
         <td>年月份</td>
@@ -63,21 +64,15 @@ $num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多�
                 }
                 ?>
         </td>
-        <td>
-            <a href="award.php?aw=1&year=<?=$year;?>&period=<?=$period?>">兌獎</a>
-        </td>
     </tr>
     <tr>
         <td>特獎</td>
         <td class="h3 num">
             <?php
-                if(!empty($num2['number'])){
-                    echo $num2['number'];
+                if(!empty($num1['number'])){
+                    echo $num1['number'];
                 }
             ?>
-        </td>
-        <td>
-            <a href="award.php?aw=2&year=<?=$year;?>&period=<?=$period?>">兌獎</a>
         </td>
     </tr>
     <tr>
@@ -90,44 +85,26 @@ $num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多�
                 }
             ?>
         </td>
-        <td>
-            <a href="award.php?aw=3&year=<?=$year;?>&period=<?=$period?>">兌獎</a>
-        </td>
     </tr>
     <tr>
         <td>二獎</td>
         <td>末 7 位數號碼與頭獎中獎號碼末 7 位相同者</td>
-        <td>
-            <a href="award.php?aw=4&year=<?=$year;?>&period=<?=$period?>">兌獎</a>
-        </td>
     </tr>
     <tr>
         <td>三獎</td>
         <td>末 6 位數號碼與頭獎中獎號碼末 6 位相同者</td>
-        <td>
-            <a href="award.php?aw=5&year=<?=$year;?>&period=<?=$period?>">兌獎</a>
-        </td>
     </tr>
     <tr>
         <td>四獎</td>
         <td>末 5 位數號碼與頭獎中獎號碼末 5 位相同者</td>
-        <td>
-            <a href="award.php?aw=6&year=<?=$year;?>&period=<?=$period?>">兌獎</a>
-        </td>
     </tr>
     <tr>
         <td>五獎</td>
         <td>末 4 位數號碼與頭獎中獎號碼末 4 位相同者</td>
-        <td>
-            <a href="award.php?aw=7&year=<?=$year;?>&period=<?=$period?>">兌獎</a>
-        </td>
     </tr>
     <tr>
         <td>六獎</td>
         <td>末 3 位數號碼與頭獎中獎號碼末 3 位相同者</td>
-        <td>
-            <a href="award.php?aw=8&year=<?=$year;?>&period=<?=$period?>">兌獎</a>
-        </td>
     </tr>
     <tr>
         <td>增開六獎</td>
@@ -138,13 +115,34 @@ $num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多�
                 }
             ?>     
         </td>
-        <td>
-            <a href="award.php?aw=9&year=<?=$year;?>&period=<?=$period?>">兌獎</a>
+    </tr>
+    <tr>
+        <td colspan="2">
+        <input class=" btn  btn-outline-light slt" type="submit" value="開獎" >     
         </td>
     </tr>
 
 
+        <input type="hidden" id='year' name='year' value="<?=$year?>">
+        <input type="hidden" id='period' name='period' value="<?=$period?>">
+        <input type="hidden" id='num1' name='num1' value="<?=$num1['number']?>">
+        <input type="hidden" id='num2' name='num2' value="<?=$num2['number']?>">
+        <?php   
+            $a=1;
+            foreach($num3 as $num){
+                echo "<input type='hidden' id='"."num3".$a."' "."name='"."num3".$a."' "."value='".$num['number']."'";
+            }
+        ?>
+        <?php   
+            $a=1;
+            foreach($num4 as $num){
+                echo "<input type='hidden' id='"."num4".$a."' "."name='"."num3".$a."' "."value='".$num['number']."'";
+            }
+        ?>
+        
+
     </table>
+    </form>
     </div>
 </div>
 </body>

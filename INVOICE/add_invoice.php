@@ -29,7 +29,7 @@
             <td colspan="2">
                 <div class="row">
                     <div class="col">
-                        <select id="inputYear" class="a form-control mx-auto" name="year">
+                        <select id="inputYear" class="a form-control mx-auto slt" name="year">
                             <option selected>請選擇年份...</option>
                             <option class="dropdown-item" value="2020" href="#">2020</option>
                             <option class="dropdown-item" value="2021" href="#">2021</option>
@@ -37,7 +37,7 @@
                         </select>
                     </div>
                     <div class="col">
-                        <select id="inputMonth" class="a form-control mx-auto" name="period">
+                        <select id="inputMonth" class="a form-control mx-auto slt" name="period">
                             <option selected>請選擇月份...</option>
                             <option class="dropdown-item" value="1">1-2</option>
                             <option class="dropdown-item" value="2">3-4</option>
@@ -54,24 +54,23 @@
         <tr>
             <td>特別獎</td>
             <td>
-                <input  type="number" name="num1" placeholder="請輸入獎號">
+                <input  type="number" name="num1" placeholder="請輸入獎號" class="slt">
             </td>
             <td>一千萬元</td>
         </tr>
         <tr>
             <td>特獎</td>
             <td>
-                <input  type="number" name="num2" placeholder="請輸入獎號">
+                <input  type="number" name="num2" placeholder="請輸入獎號" class="slt">
             </td>
             <td>兩百萬元</td>
         </tr>
         <tr>
             <td>頭獎</td>
             <td>
-                <input  type="number" name="num3[]" placeholder="請輸入獎號"><br>
-                <input  type="number" name="num3[]" placeholder="請輸入獎號"><br>
-                <input  type="number" name="num3[]" placeholder="請輸入獎號"><br>
-                <input  type="number" name="num3[]" placeholder="請輸入獎號"><br>
+                <input  type="number" name="num3[]" placeholder="請輸入獎號" class="slt"><br>
+                <input  type="number" name="num3[]" placeholder="請輸入獎號" class="slt"><br>
+                <input  type="number" name="num3[]" placeholder="請輸入獎號" class="slt"><br>
             </td>
             <td>二十萬元</td>
         </tr>
@@ -103,15 +102,15 @@
         <tr>
             <td>增開六獎</td>
             <td>
-                <input type="number" name="num4[]" placeholder="請輸入獎號"><span class="&emsp"></span>
-                <input type="number" name="num4[]" placeholder="請輸入獎號">
-                <input type="number" name="num4[]" placeholder="請輸入獎號">
+                <input type="number" name="num4[]" placeholder="請輸入獎號" class="slt"><span class="&emsp "></span>
+                <input type="number" name="num4[]" placeholder="請輸入獎號" class="slt">
+                <input type="number" name="num4[]" placeholder="請輸入獎號" class="slt">
             </td>
             <td>兩百元</td>
         </tr>
         <tr>
           <td colspan="3">
-            <input class="send h3 btn  btn-outline-light" type="submit" value="send">
+            <input class="send h4 btn  btn-outline-light slt" type="submit" value="send">
           </td>
         </tr>
         </table>

@@ -1,13 +1,14 @@
 <link rel="shortcut icon" href="imgs/dot.ico" type="image/x-icon" />
 <script src="https://kit.fontawesome.com/7b3164b4a9.js" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="include/bootstrap.css">
-<link rel="stylesheet" href="css/index.css">
-<link rel="stylesheet" href="css/nav.css">
 <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Noto+Sans+TC:wght@300;700&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/7b3164b4a9.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="include/bootstrap.css">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/index.css">
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +27,7 @@ include "com/nav.php";
 <h1 class="top ">Receipt  Lottery</h1>
   <p class="h4">Welcome to this system !This page is for the matching invoice of the unified invoice, bless you to win the prize!</p>
 </header>
-<form action="save_invoice.php" method="post"> 
+<form id="info"> 
 <div class="card  mt-4 mx-auto shadow " style="height: 400px;width: 600px;">
     <div class="info row no-gutters">
       <div class="col-md">
@@ -65,7 +66,7 @@ include "com/nav.php";
             <div class="px-5 py-1">
               <div class="expend form-group col p-0 mb-1">花費</div>
                 <input class="ml-1 slt" type="number" name="expend" placeholder="請輸入金額" required="required">
-                <input class="float-right btn  btn-outline-light slt" type="submit" value="儲存" >
+                <botton class="float-right btn  btn-outline-light slt" id="save" data-toggle="modal" data-target="#exampleModal" >儲存</botton>
               </div>
             </div>
           </div>
@@ -74,7 +75,32 @@ include "com/nav.php";
   </div>
   </div>
   </form>
-
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content mo">
+        <div class=" modal-header">
+          <h5 class="modal-title text-light" id="exampleModalLabel">Save successed!</h5>
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class=" modal-body">
+          <a class="btn btn btn-outline-light" href="index.php">繼續新增</a>
+          <a class="btn btn btn-outline-light" href="list.php">前往發票列表</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
+<script>
+  $('#save').on('click',function(){
+    var form_data = $('#info').serialize();
+    console.log(form_data);
+    $.post("save_invoice.php", form_data, function(result){
+      //資料已新增完成 這裡可再用來判斷資料是否新增成功
+    });
+  });
+</script>
 
 </html>
