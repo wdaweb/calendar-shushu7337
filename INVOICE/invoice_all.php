@@ -121,8 +121,6 @@ $num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多�
         <input class=" btn  btn-outline-light slt" type="submit" value="開獎" >     
         </td>
     </tr>
-
-
         <input type="hidden" id='year' name='year' value="<?=$year?>">
         <input type="hidden" id='period' name='period' value="<?=$period?>">
         <input type="hidden" id='num1' name='num1' value="<?=$num1['number']?>">
@@ -139,8 +137,6 @@ $num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多�
                 echo "<input type='hidden' id='"."num4".$a."' "."name='"."num3".$a."' "."value='".$num['number']."'";
             }
         ?>
-        
-
     </table>
     </form>
     </div>
