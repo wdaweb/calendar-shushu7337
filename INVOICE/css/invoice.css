@@ -23,7 +23,15 @@ a:hover{
     margin: 50px;
     margin-top: 5em;
     font-size: 1rem;
-    width: 60%;
+    width: 85%;
+}
+.slt option{
+	background: #0c0c09;
+	color: #fff6dd;
+}
+.slt{
+	background: #262624;
+	color: #fff6dd;
 }
 .table td{
     vertical-align: middle;

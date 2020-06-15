@@ -49,10 +49,10 @@ $num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多�
 ?>
 <div class="container">
     <div class="d-flex justify-content-center mt-5">
-    <form action="award_all.php" method="post">
+    <form action="award.php" method="post">
     <table class="inv table text-center table-bordered justify-content-center table-striped table-dark table-hover">
     <tr>
-        <td>年月份</td>
+        <td>年/月份</td>
     <td  class="h3 num"><?=$year;?><span class="h5">年</span><?php echo "&emsp;"."/"."&emsp;";?> <?=$monthStr[$period];?><span class="h5">月</span></td>
     </tr>
     <tr>
@@ -123,7 +123,7 @@ $num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多�
     </tr>
         <input type="hidden" id='year' name='year' value="<?=$year?>">
         <input type="hidden" id='period' name='period' value="<?=$period?>">
-         <input type="hidden" id='num1' name='num1' value="<?=$num1['number']?>">
+        <input type="hidden" id='num1' name='num1' value="<?=$num1['number']?>">
         <input type="hidden" id='num2' name='num2' value="<?=$num2['number']?>">
         <?php   
             $a=1;
