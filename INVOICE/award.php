@@ -21,6 +21,7 @@
 <body>
     <?php
 include "com/nav.php";
+// 期別轉換
 $monthStr=[
   '1'=>"1 - 2",
   '2'=>"3 - 4",
@@ -29,17 +30,91 @@ $monthStr=[
   '5'=>"9 - 10",
   '6'=>"11 - 12",
 ];
-?>
+//獎項基本資料
+$awardType = array(
+    1 => array(
+          "name" => "特別獎",
+          "rule" => "check_all",
+        ),
+    2 => array(
+          "name" => "特獎",
+          "rule" => "check_all",
+        ),
+    3 => array(
+          "name" => "頭獎",
+          "rule" => "check_part",
+        ),
+    4 => array(
+          "name" => "增開六獎",
+          "rule" => "check_all",
+        ),
+  );
+  //獎項規則
+  $awardRule = array(
+    "check_all" => array(
+      3 => 200,
+      8 => array(
+        1 => 10000000,
+        2 => 2000000
+      )),
+    "check_part" => array(
+      3 => 200,
+      4 => 1000,
+      5 => 4000,
+      6 => 10000,
+      7 => 40000,
+      8 => 200000
+    ),
+  );
+//這期的所有發票
+$invoices=all("invoice",[
+    "year"=>$_GET['year'],
+    "period"=>$_GET['period'],
+    ]);
+//這期的開獎號碼
+$award_numbers=all("award_number",[
+    "year"=>$_GET['year'],  
+    "period"=>$_GET['period'],
+    "type"=>$award_type[$_GET['aw']][1]
+    ]);
 
-    <?php 
+$awardList = array();   //來接中獎發票
+$totalBounus = 0;       //計算中獎金額
+foreach ($invoice as $i_key => $i_value) {
+    foreach ($award_numbers as $a_key => $a_value) {
+        // 取得開獎號碼的type值後，取得檢查方法為check_all 或是 check_part
+        $check_method = $awardType[$a_value['type']]['rule'];
 
-    if(empty($_GET)){
-        echo "請選擇要兌獎的項目";
-        echo "<br>";
-        echo "<a href='invoice.php'>發票獎號</a>";
-        exit();
+        //計算單筆中獎發票的金額
+        $single_bounus = 0;     
+        
+        // 定義檢查方法為check_all || check_part時
+        if($awardType[$a_value['type']]['rule'] == "check_all"){
+            // 此期所有發票號碼、此期開獎號碼，此筆開獎號碼的type，獎項規則
+            $single_bounus = check_all($a_value['number'], $i_value['number'],$a_value['type'],$awardRule);
+        }
+
+        if($awardType[$a_value['type']]['rule'] == "check_part"){
+            // 此期所有發票號碼、此期開獎號碼，此筆開獎號碼的type，獎項規則
+            $single_bounus = check_part($a_value['number'], $i_value['number'],$a_value['type'],$awardRule);
+        }
+        if($single_bouns > 0){
+            // 如果中獎金額>0時，先加總到$totalbounus
+            $totalbounus += $single_bounus;
+            // 再將$i_value['number']依序塞到$awardList後面
+            array_push($awardList,$i_value['number']);
+        }
     }
-    // 
+}
+// 正數轉負數&負數轉正數
+function plus_minus_conversion($number=0){
+    return ~$number + 1 ;
+}
+
+function check_all($award,$this_invocie_number,$type,$awardRule){
+    
+}
+/////////////////////////////////////////
     $award_type=[
         1=>["特別獎",1,8],
         2=>["特獎",2,8],
@@ -108,11 +183,6 @@ $monthStr=[
 
                 <td class="num">
                     <?php
-                    $award_numbers=all("award_number",[
-                    "year"=>$_GET['year'],  
-                    "period"=>$_GET['period'],
-                    "type"=>$award_type[$_GET['aw']][1]
-                    ]);
                     $t_num=[];
                     foreach($award_numbers as $num){
                         echo $num ['number']."&emsp;";
@@ -125,12 +195,7 @@ $monthStr=[
                 <td>中獎發票號碼</td>
                 <td class="num">
                     <?php
-                        $invoices=all("invoice",[
-                          "year"=>$_GET['year'],
-                          "period"=>$_GET['period'],
-                          ]);
-                          // 設立變數來接有?中獎
-                        $chk_num=0;
+                        
                         foreach($invoices as $ins){
                           foreach($t_num as $tn){
                               $len=$award_type[$aw][2];
