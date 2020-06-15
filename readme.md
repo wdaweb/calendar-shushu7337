@@ -13,12 +13,3 @@
 - [ ] 可以再獎號輸入的地方放入判斷式讓輸入過的獎號不能再輸入
 
 
-
-Line 118
-return $number +1?
-Bitwise Operators--->NOT
-
-Line 161  
-plus_minus_conversion($digit)不太清楚
-$digit 在前面宣告時為mb_strlen($award)
-但在核對頭獎到六獎時 也會是撈出八位數做判定， 對於164行感到困惑
