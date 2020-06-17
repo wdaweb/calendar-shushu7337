@@ -41,15 +41,15 @@ $monthStr=[
     }
     // 
     $award_type=[
-        1=>["特別獎",1,8],
-        2=>["特獎",2,8],
-        3=>["頭獎",3,8],
-        4=>["二獎",3,7],
-        5=>["三獎",3,6],
-        6=>["四獎",3,5],
-        7=>["五獎",3,4],
-        8=>["六獎",3,3],
-        9=>["增開六獎",4,3],
+        1=>["特別獎",1,8,10000000],
+        2=>["特獎",2,8,2000000],
+        3=>["頭獎",3,8,200000],
+        4=>["二獎",3,7,40000],
+        5=>["三獎",3,6,10000],
+        6=>["四獎",3,5,4000],
+        7=>["五獎",3,4,1000],
+        8=>["六獎",3,3,200],
+        9=>["增開六獎",4,3,200],
     ];
     // 中獎金額
     $award_money=[
@@ -90,19 +90,7 @@ $monthStr=[
                 <td><?=$monthStr[$period];?></td>
                 <!-- <td><?=$_GET['period'];?></td> -->
             </tr>
-            <!-- <tr>
-                <td>獎號數量</td>
-                <td>
-                    <?php
-                        // $award_nums=nums("award_number",[
-                        //   "year"=>$_GET['year'],
-                        //   "period"=>$_GET['period'],
-                        //   "type"=>$award_type[$_GET['aw']][1]
-                        // ]);
-                        // echo $award_nums;
-                    ?>
-                </td>
-            </tr> -->
+            
             <tr>
                 <td>本期兌獎獎號</td>
 
@@ -129,7 +117,6 @@ $monthStr=[
                           "year"=>$_GET['year'],
                           "period"=>$_GET['period'],
                           ]);
-                          // 設立變數來接有?中獎
                         $chk_num=0;
                         foreach($invoices as $ins){
                           foreach($t_num as $tn){
@@ -146,9 +133,11 @@ $monthStr=[
                               $chk_num++;
                               echo $ins['code'].$ins['number']."&emsp;";
                               }else{
-                                  // echo $ins['number']."再接再厲";
                               }
-                          }//echo "<br>";
+                            }
+                        }
+                        if($chk_num==0){
+                            echo "沒有中獎";
                         }
                     ?>
                 </td>
@@ -166,14 +155,14 @@ $monthStr=[
                 <td>
                     <?php
                     // echo $award_money[$aw][0];
-                    echo $money=$chk_num*$award_money[$aw][0];
+                    echo $money=$chk_num*$award_type[$aw][3];
                     ?>
                 </td>
             </tr>
 
         </table>
     </div>
-
+                        
     <?php
     // ======我是分隔線======
     // 先算出要得獎號有幾筆，再來決定要用all or find

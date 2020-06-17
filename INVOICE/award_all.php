@@ -79,7 +79,9 @@ $monthStr=[
                 <td>本期兌獎獎號</td>
 
                 <td class="num">
+                
                     <?php
+                    // 撈出本期中獎號碼
                     $aw=1;
                         
                     $award_numbers=all("award_number",[
@@ -104,9 +106,7 @@ $monthStr=[
                           ]);
                           // 設立變數來接有?中獎
                         $chk_num=0;
-                        
                         echo "<hr>";
-
                         for($aw>0;$aw<10;$aw++){
                         foreach($invoices as $ins){
                             foreach($t_num as $tn){
