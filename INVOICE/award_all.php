@@ -33,16 +33,23 @@ $monthStr=[
 
     <?php 
 
+    if(empty($_GET)){
+        echo "請選擇要兌獎的項目";
+        echo "<br>";
+        echo "<a href='invoice.php'>發票獎號</a>";
+        exit();
+    }
+    // 
     $award_type=[
-        1=>["特別獎",1,8],
-        2=>["特獎",2,8],
-        3=>["頭獎",3,8],
-        4=>["二獎",3,7],
-        5=>["三獎",3,6],
-        6=>["四獎",3,5],
-        7=>["五獎",3,4],
-        8=>["六獎",3,3],
-        9=>["增開六獎",4,3],
+        1=>["特別獎",1,8,10000000],
+        2=>["特獎",2,8,2000000],
+        3=>["頭獎",3,8,200000],
+        4=>["二獎",3,7,40000],
+        5=>["三獎",3,6,10000],
+        6=>["四獎",3,5,4000],
+        7=>["五獎",3,4,1000],
+        8=>["六獎",3,3,200],
+        9=>["增開六獎",4,3,200],
     ];
     // 中獎金額
     $award_money=[
@@ -56,78 +63,86 @@ $monthStr=[
         8=>[200],
         9=>[200],
     ];
+    // echo "<pre>";
+    // print_r($award_money);
+    // echo "</pre>";
+    if(isset($_GET['period'])){
+      $period=$_GET['period'];
+  }
     
-    if(isset($_POST['year'])){
-      $year=$_POST['year'];
-  }
-    if(isset($_POST['period'])){
-      $period=$_POST['period'];
-  }
+    $aw=$_GET['aw'];
+    // echo "獎別:".$award_type[$aw][0]."<br>";
+    // echo "年份:".$_GET['year']."<br>";
+    // echo "期別:".$_GET['period']."<br>";
     ?>
     <div class="d-flex justify-content-center mt-5">
         <table class="table text-center table-bordered justify-content-center table-striped table-dark table-hover">
             <tr>
+                <td>獎別</td>
+                <td><?=$award_type[$aw][0];?></td>
+            </tr>
+            <tr>
                 <td>年份</td>
-                <td><?=$year;?></td>
+                <td><?=$_GET['year'];?></td>
             </tr>
             <tr>
                 <td>月份</td>
                 <td><?=$monthStr[$period];?></td>
+                <!-- <td><?=$_GET['period'];?></td> -->
             </tr>
-
-            <!-- <tr>
+            
+            <tr>
                 <td>本期兌獎獎號</td>
 
                 <td class="num">
-                
                     <?php
-                    // 撈出本期中獎號碼
-                    $aw=1;
-                        
                     $award_numbers=all("award_number",[
-                    "year"=>$_POST['year'],
-                    "period"=>$_POST['period'],
+                    "year"=>$_GET['year'],  
+                    "period"=>$_GET['period'],
+                    "type"=>$award_type[$_GET['aw']][1]
                     ]);
                     $t_num=[];
                     foreach($award_numbers as $num){
-                        // echo $num ['number']."&emsp;";
+                        echo $num ['number']."&emsp;";
                         $t_num[]=$num ['number'];
                     }
                   ?>
                 </td>
-            </tr> -->
+            </tr>
             <tr>
                 <td>中獎發票號碼</td>
                 <td class="num">
                     <?php
                         $invoices=all("invoice",[
-                          "year"=>$_POST['year'],
-                          "period"=>$_POST['period'],
+                          "year"=>$_GET['year'],
+                          "period"=>$_GET['period'],
                           ]);
-                          // 設立變數來接有?中獎
+
                         $chk_num=0;
-                        echo "<hr>";
-                        for($aw>0;$aw<10;$aw++){
-                        foreach($invoices as $ins){
-                            foreach($t_num as $tn){
-                                $len=$award_type[$aw][2];
-                                $start=8-$len;
-                              // 針對增開六獎特別處理
-                              if($aw!=9){
-                                  $target_num=mb_substr($tn,$start,$len);
-                              }else{
-                                  // $tn 為增開六獎
-                                  $target_num=$tn;
-                              }
-                              if(mb_substr($ins['number'],$start,$len) == $target_num){
-                              $chk_num++;
-                              echo $ins['number']."&emsp;";
-                              }else{
-                                  // echo $ins['number']."再接再厲";
-                              }
-                            }//echo "<br>";
+                        for($aw>=9;$aw<=1;$aw--){
+                            $mid=[];
+                            foreach($invoices as $ins){
+                              foreach($t_num as $tn){
+                                  $len=$award_type[$aw][2];
+                                  $start=8-$len;
+                                  // 針對增開六獎特別處理
+                                  if($aw!=9){
+                                      $target_num=mb_substr($tn,$start,$len);
+                                  }else{
+                                      // $tn 為增開六獎
+                                      $target_num=$tn;
+                                  }
+                                  if(mb_substr($ins['number'],$start,$len) == $target_num){
+                                  $chk_num++;
+                                  echo $ins['code'].$ins['number']."&emsp;";
+                                  }else{
+                                  }
+                                }
+                            }
                         }
-                    }
+                        if($chk_num==0){
+                            echo "沒有中獎";
+                        }
                     ?>
                 </td>
             </tr>
@@ -144,14 +159,89 @@ $monthStr=[
                 <td>
                     <?php
                     // echo $award_money[$aw][0];
-                    // echo $money=$chk_num*$award_money[$aw][0];
+                    echo $money=$chk_num*$award_type[$aw][3];
                     ?>
                 </td>
             </tr>
+
         </table>
     </div>
-
+                        
     <?php
+    // ======我是分隔線======
+    // 先算出要得獎號有幾筆，再來決定要用all or find
+    // echo "<h3>獎號數量</h3>";
+    // $award_nums=nums("award_number",[
+    //     "year"=>$_GET['year'],
+    //     "period"=>$_GET['period'],
+    //     "type"=>$award_type[$_GET['aw']][1]
+    //     ]);
+        
+    // ======我是分隔線======
+    // echo "<h3>兌獎獎號</h3>";
+    // $award_numbers=all("award_number",[
+    //     "year"=>$_GET['year'],
+    //     "period"=>$_GET['period'],
+    //     "type"=>$award_type[$_GET['aw']][1]
+    //     ]);
+    
+    // $t_num=[];
+    // foreach($award_numbers as $num){
+    //     echo $num ['number']."<br>";
+    //     $t_num[]=$num ['number'];
+    //     }
+
+        // if($award_nums>1){
+        //     $award_numbers=all("award_number",[
+        //         "year"=>$_GET['year'],
+        //         "period"=>$_GET['period'],
+        //         "type"=>$award_type[$_GET['aw']][1]
+        //         ]);
+        // }else{
+        //     $award_numbers=find("award_number",[
+        //         "year"=>$_GET['year'],
+        //         "period"=>$_GET['period'],
+        //         "type"=>$award_type[$_GET['aw']][1]
+        //         ]);
+        // }
+
+        // echo "<pre>";
+        // print_r($award_numbers);
+        // echo "</pre>";
+
+
+        // ======我是分隔線======
+        // echo "<h3>該期發票號碼</h3>";
+        // $invoices=all("invoice",[
+        //     "year"=>$_GET['year'],
+        //     "period"=>$_GET['period'],
+        //     ]);
+          
+
+        // foreach($invoices as $ins){
+
+        //     foreach($t_num as $tn){
+                
+        //         $len=$award_type[$aw][2];
+                
+                
+        //         $start=8-$len;
+                
+        //         // 針對增開六獎特別處理
+        //         if($aw!=9){
+        //             $target_num=mb_substr($tn,$start,$len);
+        //         }else{
+        //             // $tn 為增開六獎
+        //             $target_num=$tn;
+        //         }
+        //         if(mb_substr($ins['number'],$start,$len) == $target_num){
+        //         echo $ins['number']."恭喜中獎";
+        //         }else{
+        //             echo $ins['number']."再接再厲";
+        //         }
+        //     }echo "<br>";
+            
+        // }
         
         ?>
 
