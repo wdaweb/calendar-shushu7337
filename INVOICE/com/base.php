@@ -28,7 +28,6 @@ function del($table,$arg){
         $sql=$sql." where `id`='$arg'";
     }
     echo $sql;
-    // echo "<hr>";
     // exec只會回傳成功或失敗
     return $pdo->exec($sql);
 }
@@ -72,6 +71,7 @@ function find($table,$arg){
         $sql=$sql." where `id`='$arg'";
     }
     return $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
+    echo $sql;
 }
 ?>
 
@@ -91,8 +91,8 @@ function all($table,...$arg){
     if(isset($arg[1])){
         $sql=$sql . $arg[1];
     }
-    // echo $sql;
     return $pdo->query($sql)->fetchAll();
+    echo $sql;
 }
 ?>
 
@@ -116,8 +116,8 @@ function save($table,$arg){
         $sql="insert into $table (`".implode('`,`',array_keys($arg))."`) values ('".implode("','",$arg)."')";
         
     }
-    // echo $sql;
     return $pdo->exec($sql);
+    echo $sql;
 }
 ?>
 

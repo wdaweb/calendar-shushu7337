@@ -49,7 +49,7 @@ $num4=all('award_number',['period'=>$period,'year'=>$year,'type'=>4]);   //多�
 ?>
 <div class="container">
     <div class="d-flex justify-content-center mt-5">
-    <form action="award.php" method="post">
+    <form action="award_all.php" method="post">
     <table class="inv table text-center table-bordered justify-content-center table-striped table-dark table-hover">
     <tr>
         <td>年/月份</td>
