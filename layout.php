@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="../plugins/bootstrap.css">
-<link rel="stylesheet" href="../plugins/custom.css">
+<link rel="stylesheet" href="./plugins/bootstrap.css">
+<link rel="stylesheet" href="./plugins/custom.css">
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Iceland" />
 
@@ -62,7 +62,7 @@ if (
   <div class="row align-items-center justify-content-center calendar ">
   <div class="row"></div>  
   <div class="caard col-sm-auto">
-          <div class="front rounded"><img src="../plugins/dot.jpg"  class="rounded" alt=""></div>
+          <div class="front rounded"><img src="./plugins/dot.jpg"  class="rounded" alt=""></div>
             <div class="back rounded">
               <div class="details">
                   <h2>Shu<br><span>Design</span></h2>

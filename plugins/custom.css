@@ -122,10 +122,10 @@ table td {
   border-radius: 50%;
   text-align: center;
   color: rgb(255, 255, 255);
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   font-size: 25px;
-  box-shadow: 1px 2px 1px rgb(148, 247, 164);
+  box-shadow: 1px 1px 1px rgb(148, 247, 164);
 }
 table td:hover{
   animation: border 2s linear alternate 1 ;
